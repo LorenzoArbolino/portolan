@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "not_found",
+      "title": "Kind",
+      "type": "string"
+    },
+    "note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Note"
+    },
+    "query": {
+      "title": "Query",
+      "type": "string"
+    },
+    "searched": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Searched",
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "query"
+  ],
+  "title": "OutNotFound",
+  "type": "object"
+}

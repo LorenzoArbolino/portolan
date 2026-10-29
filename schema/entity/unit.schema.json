@@ -1,0 +1,41 @@
+{
+  "additionalProperties": false,
+  "description": "One site × one molecule × one process route. Capacity, status, operator etc. are claims.",
+  "properties": {
+    "id": {
+      "pattern": "^unit:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}:[a-z0-9]+(?:-[a-z0-9]+)*(:\\d{2})?$",
+      "title": "Id",
+      "type": "string"
+    },
+    "molecule_id": {
+      "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+      "title": "Molecule Id",
+      "type": "string"
+    },
+    "route_id": {
+      "anyOf": [
+        {
+          "pattern": "^rte:[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Route Id"
+    },
+    "site_id": {
+      "pattern": "^site:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}$",
+      "title": "Site Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "site_id",
+    "molecule_id"
+  ],
+  "title": "Unit",
+  "type": "object"
+}

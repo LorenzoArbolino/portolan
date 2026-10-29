@@ -1,0 +1,721 @@
+{
+  "agent": "claude_code",
+  "model": "haiku",
+  "job_type": "doc_claims",
+  "date": "2026-10-26",
+  "gold_version": 30,
+  "items": 30,
+  "recall": 0.789,
+  "precision": 0.864,
+  "not_found_honesty": 1.0,
+  "quote_pass": 0.955,
+  "claims": 22,
+  "by_difficulty": {
+    "easy": {
+      "n": 7,
+      "ok": 5
+    },
+    "hard": {
+      "n": 12,
+      "ok": 8
+    },
+    "trap": {
+      "n": 11,
+      "ok": 11
+    }
+  },
+  "cost_usd_list": 0.13,
+  "seconds": 511.0,
+  "records": [
+    {
+      "id": "g01",
+      "difficulty": "easy",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g01",
+        "status": "ok",
+        "seconds": 12.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00228268,
+          "duration_ms": 10653,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g02",
+      "difficulty": "easy",
+      "trap": false,
+      "claims": 1,
+      "correct": 0,
+      "hit": false,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g02",
+        "status": "ok",
+        "seconds": 13.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00249311,
+          "duration_ms": 11220,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g03",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g03",
+        "status": "ok",
+        "seconds": 11.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00194516,
+          "duration_ms": 9047,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g04",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g04",
+        "status": "ok",
+        "seconds": 11.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00258539,
+          "duration_ms": 9317,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g05",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g05",
+        "status": "ok",
+        "seconds": 17.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0035352,
+          "duration_ms": 15188,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g06",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g06",
+        "status": "ok",
+        "seconds": 11.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0024232,
+          "duration_ms": 9196,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g07",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g07",
+        "status": "ok",
+        "seconds": 15.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00305201,
+          "duration_ms": 13303,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g08",
+      "difficulty": "easy",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 2,
+      "quotes_pass": 2,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g08",
+        "status": "ok",
+        "seconds": 17.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00333583,
+          "duration_ms": 15244,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g09",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g09",
+        "status": "ok",
+        "seconds": 11.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00239434,
+          "duration_ms": 9991,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g10",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g10",
+        "status": "ok",
+        "seconds": 10.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0034386000000000004,
+          "duration_ms": 9054,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g11",
+      "difficulty": "easy",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g11",
+        "status": "ok",
+        "seconds": 17.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00336937,
+          "duration_ms": 16378,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g12",
+      "difficulty": "easy",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g12",
+        "status": "ok",
+        "seconds": 13.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00262977,
+          "duration_ms": 11540,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g13",
+      "difficulty": "easy",
+      "trap": false,
+      "claims": 2,
+      "correct": 2,
+      "hit": true,
+      "quotes": 2,
+      "quotes_pass": 2,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g13",
+        "status": "ok",
+        "seconds": 22.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00592178,
+          "duration_ms": 20724,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g14",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g14",
+        "status": "ok",
+        "seconds": 15.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.004649810000000001,
+          "duration_ms": 14062,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g15",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g15",
+        "status": "ok",
+        "seconds": 16.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.004893370000000001,
+          "duration_ms": 14766,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g16",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g16",
+        "status": "ok",
+        "seconds": 10.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00207222,
+          "duration_ms": 8906,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g17",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g17",
+        "status": "ok",
+        "seconds": 11.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00251007,
+          "duration_ms": 9866,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g18",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g18",
+        "status": "ok",
+        "seconds": 10.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00206834,
+          "duration_ms": 8730,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g19",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g19",
+        "status": "ok",
+        "seconds": 15.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0027698700000000002,
+          "duration_ms": 14088,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g20",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g20",
+        "status": "ok",
+        "seconds": 21.5,
+        "meta": {
+          "num_turns": 9,
+          "total_cost_usd": 0.01120394,
+          "duration_ms": 19940,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g21",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g21",
+        "status": "ok",
+        "seconds": 16.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0032234000000000004,
+          "duration_ms": 14404,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g22",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g22",
+        "status": "ok",
+        "seconds": 28.5,
+        "meta": {
+          "num_turns": 5,
+          "total_cost_usd": 0.00950976,
+          "duration_ms": 27305,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g23",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 1,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g23",
+        "status": "ok",
+        "seconds": 22.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.006429310000000001,
+          "duration_ms": 21037,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g24",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 3,
+      "correct": 2,
+      "hit": true,
+      "quotes": 3,
+      "quotes_pass": 3,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g24",
+        "status": "ok",
+        "seconds": 40.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.009275050000000002,
+          "duration_ms": 38698,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g25",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 4,
+      "correct": 3,
+      "hit": true,
+      "quotes": 3,
+      "quotes_pass": 3,
+      "not_found": false,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g25",
+        "status": "ok",
+        "seconds": 31.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.00780863,
+          "duration_ms": 30048,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g26",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": false,
+      "invalid_lines": 1,
+      "run": {
+        "id": "g26",
+        "status": "ok",
+        "seconds": 23.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0062842,
+          "duration_ms": 21394,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g27",
+      "difficulty": "hard",
+      "trap": false,
+      "claims": 1,
+      "correct": 1,
+      "hit": true,
+      "quotes": 1,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g27",
+        "status": "ok",
+        "seconds": 28.0,
+        "meta": {
+          "num_turns": 4,
+          "total_cost_usd": 0.00966833,
+          "duration_ms": 26387,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g28",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g28",
+        "status": "ok",
+        "seconds": 9.5,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0019036300000000001,
+          "duration_ms": 8102,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g29",
+      "difficulty": "trap",
+      "trap": true,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g29",
+        "status": "ok",
+        "seconds": 11.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0025489199999999997,
+          "duration_ms": 9511,
+          "is_error": false
+        }
+      }
+    },
+    {
+      "id": "g30",
+      "difficulty": "easy",
+      "trap": false,
+      "claims": 0,
+      "correct": 0,
+      "hit": false,
+      "quotes": 0,
+      "quotes_pass": 0,
+      "not_found": true,
+      "invalid_lines": 0,
+      "run": {
+        "id": "g30",
+        "status": "ok",
+        "seconds": 17.0,
+        "meta": {
+          "num_turns": 3,
+          "total_cost_usd": 0.0031928600000000005,
+          "duration_ms": 15689,
+          "is_error": false
+        }
+      }
+    }
+  ]
+}

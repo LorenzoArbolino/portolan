@@ -1,0 +1,101 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: No chat or session links in commit messages or files
+        run: |
+          pattern='claude\.ai/(code|chat|share)|Claude-Session:'
+          if git log --format=%B | grep -Eq "$pattern"; then
+            echo "A commit message contains a chat/session link:"; git log --format='%h %s%n%b' | grep -En "$pattern"; exit 1
+          fi
+          if git grep -nE "$pattern" -- . ':!.github/workflows/ci.yml'; then
+            echo "A tracked file contains a chat/session link"; exit 1
+          fi
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - name: System packages
+        run: sudo apt-get update -q && sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr
+      - name: Install
+        run: uv sync --locked
+      - name: Lint
+        run: |
+          uv run ruff check
+          uv run ruff format --check .
+      - name: Schemas are up to date
+        run: uv run portolan schemas --check
+      - name: Estimate backtest is up to date
+        run: uv run portolan backtest --check
+      - name: Chain packs load
+        run: for f in chains/[!_]*.yaml; do uv run portolan chain "$f"; done
+      - name: people_leak on public data
+        run: uv run portolan leak-check
+      - name: Build (resolve → metrics → bundle)
+        run: uv run portolan build
+      - name: people_leak on build output
+        run: uv run portolan leak-check build/app
+      - name: Tests
+        run: uv run pytest -q
+      - name: Audit (before/after vs the base branch in the job summary)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch -q --depth=1 origin "${{ github.base_ref }}"
+            git worktree add -q ../base FETCH_HEAD
+            (cd ../base && uv run portolan build > /dev/null && uv run portolan audit --out ../base-audit > /dev/null) \
+              || echo "base branch has no audit command"
+          fi
+          if [ -f ../base-audit/audit.json ]; then
+            uv run portolan audit --compare ../base-audit/audit.json
+          else
+            uv run portolan audit
+          fi
+          cat build/audit.md >> "$GITHUB_STEP_SUMMARY"
+
+  app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Data bundle
+        run: |
+          uv sync --locked
+          uv run portolan build
+          mkdir -p app/public/data && cp build/app/*.json app/public/data/
+      - name: Typecheck and build
+        working-directory: app
+        run: npm ci && npm run build
+
+  # The pipeline also runs on Windows: keep it working there (no poppler/tesseract,
+  # so PDF text comes from pypdf and OCR tests are skipped).
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install
+        run: uv sync --locked
+      - name: Tests
+        run: uv run pytest -q

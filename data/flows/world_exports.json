@@ -1,0 +1,180 @@
+{
+ "year": 2025,
+ "unit": "t",
+ "note": "Exports by destination, 2025. Retrieved 2026-10-28 via FactIQ (us_census_hs, japan_trade, india_trade). China (GACC) and the EU (Eurostat) are added at build time from data/flows.",
+ "codes": {
+  "290611": {
+   "US": {
+    "total": 2222,
+    "partners": {
+     "IN": 920.3,
+     "BR": 397.0,
+     "MX": 319.4,
+     "SG": 173.5,
+     "DE": 98.7,
+     "CA": 78.6,
+     "JP": 66.8,
+     "CN": 65.5,
+     "KR": 25.9,
+     "CO": 14.2
+    },
+    "source": "US Census Bureau, exports by 10-digit HTS code, quantity (kg)"
+   },
+   "JP": {
+    "total": 520.7,
+    "partners": {
+     "US": 80.6,
+     "SG": 66.7,
+     "TW": 49.4,
+     "MX": 48.6,
+     "CN": 40.5,
+     "FR": 36.3,
+     "VN": 31.3,
+     "IN": 27.0,
+     "DE": 25.3,
+     "TH": 21.2
+    },
+    "source": "Japan Customs (MoF), exports by 9-digit code, quantity (kg)"
+   },
+   "IN": {
+    "total": 11430.5,
+    "partners": {
+     "CN": 4255.3,
+     "US": 925.3,
+     "JP": 755.0,
+     "FR": 638.9,
+     "PH": 631.3,
+     "SG": 550.8,
+     "KR": 508.4,
+     "NL": 398.2,
+     "DE": 360.1,
+     "NG": 344.0
+    },
+    "source": "DGCI&S (India), exports by HS6 code, value only (US$)",
+    "estimate": {
+     "method": "tonnes = India's export value ÷ China's average export price for the same code in 2025",
+     "price_usd_per_kg": 11.8,
+     "low": 8164.6,
+     "high": 16002.7,
+     "confidence": "low"
+    }
+   }
+  },
+  "293621": {
+   "US": {
+    "total": 5546.7,
+    "partners": {
+     "CN": 4432.8,
+     "CA": 243.0,
+     "CH": 103.0,
+     "AE": 88.2,
+     "HK": 68.4,
+     "ID": 52.5,
+     "TR": 51.0,
+     "IN": 48.4,
+     "NL": 47.7,
+     "AU": 34.2
+    },
+    "source": "US Census Bureau, exports by 10-digit HTS code, quantity (kg)"
+   },
+   "IN": {
+    "total": 701.6,
+    "partners": {
+     "US": 194.4,
+     "DE": 133.7,
+     "FR": 106.7,
+     "PH": 29.6,
+     "AE": 24.5,
+     "NL": 24.1,
+     "EG": 16.4,
+     "BR": 13.9,
+     "NP": 13.5,
+     "ES": 12.1
+    },
+    "source": "DGCI&S (India), exports by HS6 code, value only (US$)",
+    "estimate": {
+     "method": "tonnes = India's export value ÷ China's average export price for the same code in 2025",
+     "price_usd_per_kg": 27.37,
+     "low": 501.1,
+     "high": 982.2,
+     "confidence": "low"
+    }
+   }
+  },
+  "293628": {
+   "US": {
+    "total": 3997.5,
+    "partners": {
+     "CA": 2175.4,
+     "CH": 285.2,
+     "MX": 266.4,
+     "CN": 231.9,
+     "AU": 138.7,
+     "JP": 84.1,
+     "BR": 83.0,
+     "DE": 81.9,
+     "PH": 77.7,
+     "SG": 66.1
+    },
+    "source": "US Census Bureau, exports by 10-digit HTS code, quantity (kg)"
+   },
+   "JP": {
+    "total": 215.5,
+    "partners": {
+     "US": 132.3,
+     "TW": 30.3,
+     "TH": 18.2,
+     "DE": 8.4,
+     "PH": 6.7,
+     "FR": 3.8,
+     "VN": 3.4,
+     "CN": 3.3,
+     "HK": 1.8,
+     "KR": 1.7
+    },
+    "source": "Japan Customs (MoF), exports by 9-digit code, quantity (kg)"
+   },
+   "IN": {
+    "total": 2013.8,
+    "partners": {
+     "US": 983.5,
+     "NL": 176.4,
+     "ES": 127.2,
+     "AU": 105.4,
+     "DE": 65.6,
+     "AE": 61.7,
+     "TH": 57.0,
+     "VN": 44.5,
+     "ID": 41.4,
+     "KR": 40.6
+    },
+    "source": "DGCI&S (India), exports by HS6 code, value only (US$)",
+    "estimate": {
+     "method": "tonnes = India's export value ÷ China's average export price for the same code in 2025",
+     "price_usd_per_kg": 12.81,
+     "low": 1438.4,
+     "high": 2819.3,
+     "confidence": "low"
+    }
+   }
+  },
+  "380510": {
+   "US": {
+    "total": 9580.7,
+    "partners": {
+     "IN": 8912.7,
+     "AU": 226.5,
+     "CA": 114.1,
+     "FR": 100.6,
+     "EG": 63.8,
+     "MX": 28.7,
+     "SA": 24.9,
+     "DE": 18.2,
+     "DM": 17.8,
+     "BR": 11.4
+    },
+    "source": "US Census Bureau, exports by 10-digit HTS code, quantity (kg)"
+   }
+  }
+ }
+}

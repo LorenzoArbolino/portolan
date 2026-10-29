@@ -1,0 +1,55 @@
+[project]
+name = "portolan"
+version = "0.1.0"
+description = "The open map of where chemicals are made: every plant, every route, every number sourced."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+authors = [{ name = "Lorenzo Arbolino" }]
+keywords = ["chemicals", "supply chain", "production capacity", "open data", "isoprenoids"]
+dependencies = [
+    "duckdb>=2.0.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.14.1",
+    "pypdf>=6.21.2",
+    "pyyaml>=6.0.3",
+    "rapidfuzz>=3.14.6",
+    "trafilatura>=2.3.1",
+    "typer>=0.27.3",
+]
+
+[project.urls]
+Homepage = "https://lorenzoarbolino.github.io/portolan/"
+Repository = "https://github.com/LorenzoArbolino/portolan"
+
+[project.scripts]
+portolan = "portolan.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["portolan", "pipeline"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["typer.Option", "typer.Argument", "pathlib.Path"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]  # fixtures quote documents verbatim

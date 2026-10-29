@@ -1,0 +1,113 @@
+{
+  "$defs": {
+    "Magnitude": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Magnitude",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "date": {
+      "format": "date",
+      "title": "Date",
+      "type": "string"
+    },
+    "date_precision": {
+      "default": "day",
+      "enum": [
+        "day",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "title": "Date Precision",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "pattern": "^src:[0-9a-f]{12}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^ev:\\d{4}-\\d{2}-\\d{2}:[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "magnitude": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Magnitude"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "subjects": {
+      "items": {
+        "pattern": "^(mol|rte|site|unit|co|ev|tm):\\S+$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Subjects",
+      "type": "array"
+    },
+    "summary": {
+      "maxLength": 280,
+      "title": "Summary",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "announced_closure",
+        "closed",
+        "idled",
+        "restarted",
+        "announced_expansion",
+        "commissioned",
+        "construction_started",
+        "acquisition",
+        "divestment",
+        "jv_formed",
+        "insolvency",
+        "force_majeure",
+        "incident",
+        "trade_measure",
+        "regulatory",
+        "project_cancelled"
+      ],
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "date",
+    "type",
+    "subjects",
+    "summary",
+    "evidence_ids"
+  ],
+  "title": "Event",
+  "type": "object"
+}

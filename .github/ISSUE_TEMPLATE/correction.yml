@@ -1,0 +1,38 @@
+name: Correction
+description: A value on the map is wrong or missing, and a public source says so.
+title: "Correction: "
+labels: [correction]
+body:
+  - type: input
+    id: site
+    attributes:
+      label: Plant (site ID)
+      description: From the link you opened, e.g. site:de-ludwigshafen-01. The plant's name is fine too.
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: What is wrong or missing
+      options: [capacity, status, operator / owner, start year, location, the plant does not exist, other]
+    validations:
+      required: true
+  - type: input
+    id: value
+    attributes:
+      label: Correct value
+      description: e.g. "12,000 t/a citral", "closed in 2025", "operated by …"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Public source (link)
+      description: A page anyone can open. Every value on the map links to a quote, so we need one.
+    validations:
+      required: true
+  - type: textarea
+    id: quote
+    attributes:
+      label: The sentence that says it (optional)
+      description: Copy the sentence from the source, so we can check it fast. No personal data, please.

@@ -1,0 +1,46 @@
+# Portolan chain pack: template
+# One file per chain. A maintainer approves it (approved_by + date) before any research run.
+
+id: chain:<slug>
+name: "<Human name>"
+version: 1.0
+status: draft            # draft | approved | building | live | paused
+approved_by: null        # "<github-handle>, YYYY-MM-DD"
+why_this_chain: >
+  Two or three sentences: what changes in this chain, and who feels it.
+
+molecules:               # tier: base | intermediate | specialty   ·   role: core (full world coverage) | feedstock | downstream | context (flows/routes only)
+  - id: mol:<cas>
+    name: "<name>"
+    tier: specialty      # base = one of GEM's 8 building blocks: route endpoint, no Portolan units
+    cas: "<cas>"
+    hs6: ["<hs6>"]       # verify at build; HS6 often groups several molecules
+    cn8: []
+    ets_activity: null
+    role: core
+    form: liquid         # solid | liquid | gas
+
+routes:
+  - id: rte:<product>:<route>
+    product: mol:<cas>
+    inputs: [mol:<cas>]
+    coproducts: []
+    note: ""
+
+regions:                 # priority sets how deep the research goes; languages go into job prompts
+  - {code: EU, priority: 1, languages: [en, de, fr, it, nl, es]}
+  - {code: IN, priority: 1, languages: [en, hi]}
+  - {code: CN, priority: 1, languages: [zh, en]}
+  - {code: US, priority: 2, languages: [en]}
+  - {code: JP, priority: 2, languages: [ja, en]}
+  - {code: ROW, priority: 3, languages: [en]}
+
+seed_sources: []         # source IDs (docs/sources/), plus chain-specific URLs
+seed_hypotheses: []      # entities believed to exist; research must find evidence or drop them
+sanity:
+  capacity_tpa: {min: 1, max: 1000000}
+buyer_segments: []       # for the private people layer
+adjacent_chains: []      # shared molecules → graph links
+budget:
+  usd_max: 0             # spend cap for paid models; 0 = free models only
+open_questions: []

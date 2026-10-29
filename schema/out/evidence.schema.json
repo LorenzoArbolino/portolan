@@ -1,0 +1,118 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "cites_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cites Url"
+    },
+    "kind": {
+      "const": "evidence",
+      "title": "Kind",
+      "type": "string"
+    },
+    "language": {
+      "description": "ISO 639-1",
+      "pattern": "^[a-z]{2}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "locator": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Locator"
+    },
+    "published_at": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Published At"
+    },
+    "publisher": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Publisher"
+    },
+    "quote": {
+      "maxLength": 400,
+      "minLength": 1,
+      "title": "Quote",
+      "type": "string"
+    },
+    "quote_en": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Quote En"
+    },
+    "retrieved_at": {
+      "format": "date-time",
+      "title": "Retrieved At",
+      "type": "string"
+    },
+    "source_type": {
+      "enum": [
+        "regulator",
+        "permit",
+        "company_primary",
+        "exchange_filing",
+        "trade_measure",
+        "trade_press",
+        "aggregator",
+        "association",
+        "operator_claimed",
+        "other"
+      ],
+      "title": "Source Type",
+      "type": "string"
+    },
+    "url": {
+      "title": "Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "kind",
+    "url",
+    "retrieved_at",
+    "source_type",
+    "language",
+    "quote"
+  ],
+  "title": "OutEvidence",
+  "type": "object"
+}

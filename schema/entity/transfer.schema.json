@@ -1,0 +1,89 @@
+{
+  "additionalProperties": false,
+  "description": "An ownership change read from an event (`data/transfers.csv`, a judgement kept as data like merges).\n`operator`: the buyer takes over the listed sites. `parent`: the target company keeps operating them, but\nits parent becomes the buyer. The build turns each into claims dated on the event.",
+  "properties": {
+    "buyer": {
+      "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Buyer",
+      "type": "string"
+    },
+    "date": {
+      "format": "date",
+      "title": "Date",
+      "type": "string"
+    },
+    "decided_by": {
+      "title": "Decided By",
+      "type": "string"
+    },
+    "event_id": {
+      "pattern": "^ev:\\d{4}-\\d{2}-\\d{2}:[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "operator",
+        "parent"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Note"
+    },
+    "seller": {
+      "anyOf": [
+        {
+          "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Seller"
+    },
+    "sites": {
+      "default": [],
+      "items": {
+        "pattern": "^site:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}$",
+        "type": "string"
+      },
+      "title": "Sites",
+      "type": "array"
+    },
+    "target": {
+      "anyOf": [
+        {
+          "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Target"
+    }
+  },
+  "required": [
+    "event_id",
+    "kind",
+    "buyer",
+    "decided_by",
+    "date"
+  ],
+  "title": "Transfer",
+  "type": "object"
+}

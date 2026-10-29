@@ -1,0 +1,152 @@
+{
+  "$defs": {
+    "CompanyRate": {
+      "additionalProperties": false,
+      "properties": {
+        "company_id": {
+          "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Company Id",
+          "type": "string"
+        },
+        "rate": {
+          "title": "Rate",
+          "type": "number"
+        }
+      },
+      "required": [
+        "company_id",
+        "rate"
+      ],
+      "title": "CompanyRate",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "cn_codes": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Cn Codes",
+      "type": "array"
+    },
+    "company_rates": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/CompanyRate"
+      },
+      "title": "Company Rates",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^tm:[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "in_force_from": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "In Force From"
+    },
+    "in_force_to": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "In Force To"
+    },
+    "instrument": {
+      "anyOf": [
+        {
+          "enum": [
+            "ad",
+            "cvd",
+            "safeguard",
+            "quota",
+            "ban",
+            "restriction"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Instrument"
+    },
+    "jurisdiction": {
+      "title": "Jurisdiction",
+      "type": "string"
+    },
+    "legal_ref": {
+      "title": "Legal Ref",
+      "type": "string"
+    },
+    "origin_iso3": {
+      "default": [],
+      "items": {
+        "pattern": "^[A-Z]{3}$",
+        "type": "string"
+      },
+      "title": "Origin Iso3",
+      "type": "array"
+    },
+    "product_desc": {
+      "title": "Product Desc",
+      "type": "string"
+    },
+    "rate_max": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rate Max"
+    },
+    "rate_min": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rate Min"
+    },
+    "url": {
+      "title": "Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "jurisdiction",
+    "product_desc",
+    "legal_ref",
+    "url"
+  ],
+  "title": "Measure",
+  "type": "object"
+}

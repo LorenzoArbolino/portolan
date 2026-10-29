@@ -1,0 +1,22 @@
+# Sources whose terms forbid quoting or redistribution. Their pages can guide search, but they are never
+# the evidence for a public number: claims citing only them are rejected with a note and sent to review.
+# `match` is a domain suffix. Add a row with the reason and the date checked; remove when terms allow reuse.
+quarantine:
+  - {match: mubychem.com, reason: "catalogue network (Mubychem / Anmol Chemicals) calling itself 'manufacturer' of hundreds of unrelated chemicals; a lead at most, never evidence of a plant", checked: 2026-10-29}
+  - {match: imarcgroup.com, reason: "market-report seller; terms restrict reproduction [inference: verify]", checked: 2026-10-27}
+  - {match: procurementresource.com, reason: "market-report seller; terms restrict reproduction [inference: verify]", checked: 2026-10-27}
+  - {match: researchandmarkets.com, reason: "market-report seller; terms restrict reproduction [inference: verify]", checked: 2026-10-27}
+  - {match: marketresearchfuture.com, reason: "market-report seller [inference: verify]", checked: 2026-10-27}
+  - {match: chyxx.com, reason: "智研咨询 report seller; uncited figures [inference: verify]", checked: 2026-10-27}
+  - {match: faxiangongchang.com, reason: "unsourced industry report (08-landscape); never evidence", checked: 2026-10-27}
+  # Generated "market report" sites: round company-wide totals and world figures that contradict each other
+  # (e.g. linalool 14,000 t vs 82,000 t; myrcene 23,182 t vs 184,000 t). Never evidence. Checked 2026-10-28.
+  - {match: 360researchreports.com, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: marketreportsworld.com, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: globalmarketstatistics.com, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: businessresearchinsights.com, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: marketgrowthreports.com, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: industryresearch.biz, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: cognitivemarketresearch.com, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: wiseguyreports.com, reason: "content-farm market report; unreliable figures", checked: 2026-10-28}
+  - {match: marketpublishers.com, reason: "market-report reseller; figures not traceable", checked: 2026-10-28}

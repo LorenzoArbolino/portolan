@@ -1,0 +1,83 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "flow": {
+      "enum": [
+        "import",
+        "export"
+      ],
+      "title": "Flow",
+      "type": "string"
+    },
+    "hs6": {
+      "pattern": "^\\d{6}$",
+      "title": "Hs6",
+      "type": "string"
+    },
+    "partner_iso3": {
+      "pattern": "^[A-Z]{3}$",
+      "title": "Partner Iso3",
+      "type": "string"
+    },
+    "period": {
+      "pattern": "^\\d{4}(-\\d{2})?$",
+      "title": "Period",
+      "type": "string"
+    },
+    "qty_kg": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Qty Kg"
+    },
+    "reporter_iso3": {
+      "pattern": "^[A-Z]{3}$",
+      "title": "Reporter Iso3",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "value_eur": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value Eur"
+    },
+    "value_usd": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value Usd"
+    }
+  },
+  "required": [
+    "reporter_iso3",
+    "partner_iso3",
+    "flow",
+    "hs6",
+    "period",
+    "source"
+  ],
+  "title": "Flow",
+  "type": "object"
+}

@@ -1,0 +1,535 @@
+{
+  "$defs": {
+    "Budget": {
+      "additionalProperties": false,
+      "properties": {
+        "usd_max": {
+          "default": 0,
+          "title": "Usd Max",
+          "type": "number"
+        }
+      },
+      "title": "Budget",
+      "type": "object"
+    },
+    "ChainMolecule": {
+      "additionalProperties": false,
+      "properties": {
+        "byproduct": {
+          "default": false,
+          "title": "Byproduct",
+          "type": "boolean"
+        },
+        "cas": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cas"
+        },
+        "cn8": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Cn8",
+          "type": "array"
+        },
+        "cn_hs8": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cn Hs8"
+        },
+        "ets_activity": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ets Activity"
+        },
+        "form": {
+          "anyOf": [
+            {
+              "enum": [
+                "solid",
+                "liquid",
+                "gas",
+                "solution"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Form"
+        },
+        "hs6": {
+          "default": [],
+          "items": {
+            "pattern": "^\\d{6}$",
+            "type": "string"
+          },
+          "title": "Hs6",
+          "type": "array"
+        },
+        "hs6_exact": {
+          "default": false,
+          "title": "Hs6 Exact",
+          "type": "boolean"
+        },
+        "hs6_scope": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hs6 Scope"
+        },
+        "id": {
+          "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "names": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Names",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "role": {
+          "enum": [
+            "core",
+            "feedstock",
+            "downstream",
+            "context"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "tier": {
+          "enum": [
+            "base",
+            "intermediate",
+            "specialty"
+          ],
+          "title": "Tier",
+          "type": "string"
+        },
+        "trade_basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Trade Basis"
+        },
+        "weight": {
+          "default": 1,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Weight",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "tier",
+        "role"
+      ],
+      "title": "ChainMolecule",
+      "type": "object"
+    },
+    "ChainRoute": {
+      "additionalProperties": false,
+      "properties": {
+        "coproducts": {
+          "default": [],
+          "items": {
+            "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+            "type": "string"
+          },
+          "title": "Coproducts",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^rte:[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "inputs": {
+          "default": [],
+          "items": {
+            "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+            "type": "string"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "product": {
+          "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+          "title": "Product",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "product"
+      ],
+      "title": "ChainRoute",
+      "type": "object"
+    },
+    "MustFind": {
+      "additionalProperties": false,
+      "description": "One item research must resolve before breadth (rule 5): a company (and optionally its sites) and the\nmolecules it is believed to make. Its state is computed from the data at build time (`portolan.mustfind`):\na molecule is found when the company's group has a unit with a sourced status, or explicitly unfound when\n`unfound` records what was searched.",
+      "properties": {
+        "aliases": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        },
+        "company": {
+          "title": "Company",
+          "type": "string"
+        },
+        "company_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Company Ids",
+          "type": "array"
+        },
+        "id": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "molecules": {
+          "items": {
+            "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+            "type": "string"
+          },
+          "title": "Molecules",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "places": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Places",
+          "type": "array"
+        },
+        "sites": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Sites",
+          "type": "array"
+        },
+        "unfound": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "default": {},
+          "title": "Unfound",
+          "type": "object"
+        },
+        "weight": {
+          "default": 3,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Weight",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "company",
+        "molecules"
+      ],
+      "title": "MustFind",
+      "type": "object"
+    },
+    "Range": {
+      "additionalProperties": false,
+      "properties": {
+        "max": {
+          "title": "Max",
+          "type": "number"
+        },
+        "min": {
+          "title": "Min",
+          "type": "number"
+        }
+      },
+      "required": [
+        "min",
+        "max"
+      ],
+      "title": "Range",
+      "type": "object"
+    },
+    "Region": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "languages": {
+          "items": {
+            "description": "ISO 639-1",
+            "pattern": "^[a-z]{2}$",
+            "type": "string"
+          },
+          "title": "Languages",
+          "type": "array"
+        },
+        "priority": {
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Priority",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "code",
+        "priority",
+        "languages"
+      ],
+      "title": "Region",
+      "type": "object"
+    },
+    "Sanity": {
+      "additionalProperties": false,
+      "properties": {
+        "capacity_tpa": {
+          "$ref": "#/$defs/Range"
+        }
+      },
+      "required": [
+        "capacity_tpa"
+      ],
+      "title": "Sanity",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "adjacent_chains": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Adjacent Chains",
+      "type": "array"
+    },
+    "approved_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Approved By"
+    },
+    "budget": {
+      "$ref": "#/$defs/Budget",
+      "default": {
+        "usd_max": 0.0
+      }
+    },
+    "buyer_segments": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Buyer Segments",
+      "type": "array"
+    },
+    "first_molecules": {
+      "default": [],
+      "items": {
+        "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+        "type": "string"
+      },
+      "title": "First Molecules",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^chain:[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "molecules": {
+      "items": {
+        "$ref": "#/$defs/ChainMolecule"
+      },
+      "title": "Molecules",
+      "type": "array"
+    },
+    "must_find": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/MustFind"
+      },
+      "title": "Must Find",
+      "type": "array"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "open_questions": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Open Questions",
+      "type": "array"
+    },
+    "regions": {
+      "items": {
+        "$ref": "#/$defs/Region"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "routes": {
+      "items": {
+        "$ref": "#/$defs/ChainRoute"
+      },
+      "title": "Routes",
+      "type": "array"
+    },
+    "sanity": {
+      "$ref": "#/$defs/Sanity"
+    },
+    "seed_hypotheses": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Seed Hypotheses",
+      "type": "array"
+    },
+    "seed_sources": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Seed Sources",
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "approved",
+        "building",
+        "live",
+        "paused"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "why_this_chain": {
+      "title": "Why This Chain",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "version",
+    "status",
+    "why_this_chain",
+    "molecules",
+    "routes",
+    "regions",
+    "sanity"
+  ],
+  "title": "ChainPack",
+  "type": "object"
+}

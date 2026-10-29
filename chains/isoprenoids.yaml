@@ -1,0 +1,234 @@
+# Chain pack: isoprenoids.
+# Every CAS/HS code, route and seed hypothesis below is a starting point from general knowledge or a single
+# source: research must verify each one. Routes are hypotheses about how molecules are made, not claims about any plant.
+
+id: chain:isoprenoids
+name: "Terpenes & isoprenoids: from base chemicals and pine to aroma chemicals and vitamins A/E"
+version: 1.0
+status: approved
+approved_by: "LorenzoArbolino, 2026-10-25"
+why_this_chain: >
+  A handful of plants make the C10 building blocks (citral, linalool) behind both fragrances and
+  vitamins A/E. The chain starts from base chemicals mapped by GEM (methanol, C4s, benzene/propylene → acetone)
+  and from pine (crude sulphate turpentine from kraft pulp mills, which competes with renewable-fuel policy).
+  One fire at BASF's Ludwigshafen citral plant (31 Oct 2017) forced force majeure on vitamins A/E and carotenoids;
+  since then China has added large citral capacity (Wanhua, Yantai, 2024). The buyers (Givaudan, dsm-firmenich)
+  are headquartered in Geneva.
+
+# tier: base (route endpoint, plants come from the external GEM layer) | intermediate | specialty
+# role: core (full world unit coverage) | feedstock | downstream | context (flows/routes only, no unit mapping)
+molecules:
+  # base layer (GEM GChI covers plants; Portolan maps no units for these)
+  - {id: mol:67-56-1,  name: "methanol",  cas: "67-56-1",  tier: base, role: context, form: liquid}
+  - {id: mol:71-43-2,  name: "benzene",   cas: "71-43-2",  tier: base, role: context, form: liquid}
+  - {id: mol:115-07-1, name: "propylene", cas: "115-07-1", tier: base, role: context, form: gas}
+  - {id: mol:106-99-0, name: "butadiene (C4 stream marker)", cas: "106-99-0", tier: base, role: context, form: gas}
+  # intermediates bridging base → isoprenoids
+  - {id: mol:50-00-0,  name: "formaldehyde", cas: "50-00-0",  hs6: ["291211"], tier: intermediate, role: context, form: solution}
+  - {id: mol:115-11-7, name: "isobutylene",  cas: "115-11-7", hs6: ["290123"], tier: intermediate, role: context, form: gas, note: "from cracker C4 raffinate or MTBE cracking"}
+  - {id: mol:67-64-1,  name: "acetone",      cas: "67-64-1",  hs6: ["291411"], tier: intermediate, role: context, form: liquid, note: "co-product of phenol via cumene (benzene + propylene)"}
+  - {id: mol:74-86-2,  name: "acetylene",    cas: "74-86-2",  hs6: ["290129"], tier: intermediate, role: context, form: gas}
+  - {id: mol:763-32-6, name: "isoprenol (3-methyl-3-buten-1-ol)", names: ["异戊烯醇"], hs6_scope: "HS 290529 \"other unsaturated monohydric alcohols\"", weight: 2, cas: "763-32-6", hs6: ["290529"], tier: intermediate, role: feedstock, form: liquid}
+  - {id: mol:8006-64-2, name: "turpentine (gum / crude sulphate)", names: ["松节油", "テレビン"], weight: 1, byproduct: true, cas: "8006-64-2", hs6: ["380510"], hs6_exact: true, tier: intermediate, role: feedstock, form: liquid, note: "Crude sulphate turpentine is a by-product of kraft pulp mills, so most turpentine producers are paper mills. Output tracks pulp runs, not terpene demand."}
+  - {id: mol:700-13-0, name: "trimethylhydroquinone (TMHQ)", names: ["三甲基氢醌"], hs6_scope: "HS 290729 \"other polyphenols\"", weight: 2, cas: "700-13-0", hs6: ["290729"], tier: intermediate, role: context, form: solid}
+  # C10 core
+  - {id: mol:80-56-8,  name: "alpha-pinene", names: ["蒎烯", "pinene"], hs6_scope: "HS 290219 \"other cyclanic, cyclenic or cycloterpenic hydrocarbons\": all pinenes, camphene, limonene and more", weight: 1, cas: "80-56-8",  hs6: ["290219"], cn_hs8: "29021910", tier: specialty, role: core, form: liquid}
+  - {id: mol:127-91-3, name: "beta-pinene", names: ["蒎烯", "pinene"], hs6_scope: "HS 290219 \"other cyclanic, cyclenic or cycloterpenic hydrocarbons\": all pinenes, camphene, limonene and more", weight: 1,  cas: "127-91-3", hs6: ["290219"], cn_hs8: "29021910", tier: specialty, role: core, form: liquid}
+  - {id: mol:123-35-3, name: "myrcene", names: ["月桂烯"], hs6_scope: "HS 290129 \"other unsaturated acyclic hydrocarbons\": every acyclic olefin beyond ethylene, propylene, butenes, butadiene and isoprene", weight: 1,      cas: "123-35-3", hs6: ["290129"], tier: specialty, role: core, form: liquid}
+  - {id: mol:78-70-6,  name: "linalool", names: ["芳樟醇", "リナロール"], hs6_scope: "HS 290522 \"acyclic terpene alcohols\": linalool, geraniol, nerol, citronellol and others", weight: 3,     cas: "78-70-6",  hs6: ["290522"], cn_hs8: "29052230", tier: specialty, role: core, form: liquid}
+  - {id: mol:106-24-1, name: "geraniol", names: ["香叶醇", "ゲラニオール"], hs6_scope: "HS 290522 \"acyclic terpene alcohols\": linalool, geraniol, nerol, citronellol and others", weight: 2,     cas: "106-24-1", hs6: ["290522"], cn_hs8: "29052210", tier: specialty, role: core, form: liquid}
+  - {id: mol:5392-40-5, name: "citral", names: ["柠檬醛", "シトラール", "Citral"], hs6_scope: "HS 291219 \"other acyclic aldehydes without other oxygen function\": citral, citronellal and others", weight: 3,      cas: "5392-40-5", hs6: ["291219"], tier: specialty, role: core, form: liquid}
+  - {id: mol:2216-51-5, name: "L-menthol", names: ["薄荷醇", "メントール", "menthol"], weight: 3,   cas: "2216-51-5", hs6: ["290611"], hs6_exact: true, cn_hs8: "29061100", tier: specialty, role: core, form: solid}
+  - {id: mol:18479-58-8, name: "dihydromyrcenol", names: ["二氢月桂烯醇"], hs6_scope: "HS 290519 \"other saturated monohydric alcohols\"", weight: 2, cas: "18479-58-8", hs6: ["290519"], tier: specialty, role: core, form: liquid}
+  # C13+ / vitamins
+  - {id: mol:79-77-6,  name: "beta-ionone", names: ["紫罗兰酮", "β-紫罗兰酮", "ionone", "ヨノン"], hs6_scope: "HS 291423 \"ionones and methylionones\": alpha- and beta-ionone and their methyl homologues", weight: 3, cas: "79-77-6", hs6: ["291423"], tier: specialty, role: core, form: liquid}
+  - {id: mol:505-32-8, name: "isophytol", names: ["异植物醇", "植物醇"], hs6_scope: "HS 290519 \"other saturated monohydric alcohols\"", weight: 3,   cas: "505-32-8", hs6: ["290519"], tier: specialty, role: core, form: liquid}
+  - {id: mol:127-47-9, name: "vitamin A acetate", names: ["维生素A", "维生素 A", "ビタミンA", "vitamin A"], weight: 3, cas: "127-47-9", hs6: ["293621"], hs6_exact: true, cn_hs8: "29362100", tier: specialty, role: downstream, form: solid}
+  - {id: mol:7695-91-2, name: "vitamin E acetate (dl-alpha-tocopheryl acetate)", names: ["维生素E", "维生素 E", "ビタミンE", "vitamin E", "tocopheryl"], trade_basis: "Basis unclear. GACC and HS 2936.28 count the product as shipped; in US practice feed-grade 50% vitamin E powders on a carrier are classified here too (CBP ruling NY 890990), so tonnage may be powder weight, not pure acetate. That would explain exports above the mapped capacity.", weight: 3, cas: "7695-91-2", hs6: ["293628"], hs6_exact: true, cn_hs8: "29362800", tier: specialty, role: downstream, form: liquid}
+
+routes:
+  # base → intermediates
+  - {id: "rte:formaldehyde:methanol-oxidation", product: mol:50-00-0, inputs: [mol:67-56-1]}
+  - {id: "rte:acetone:cumene", product: mol:67-64-1, inputs: [mol:71-43-2, mol:115-07-1], note: "co-product with phenol"}
+  - {id: "rte:isobutylene:c4-raffinate", product: mol:115-11-7, inputs: [mol:106-99-0], note: "proxy edge: same C4 cut, not a reaction from butadiene"}
+  - {id: "rte:isoprenol:prins", product: mol:763-32-6, inputs: [mol:115-11-7, mol:50-00-0]}
+  # pine branch
+  - {id: "rte:pinenes:turpentine-fractionation", product: mol:80-56-8, inputs: [mol:8006-64-2], coproducts: [mol:127-91-3]}
+  - {id: "rte:myrcene:beta-pinene-pyrolysis", product: mol:123-35-3, inputs: [mol:127-91-3]}
+  - {id: "rte:linalool:pinene", product: mol:78-70-6, inputs: [mol:80-56-8], note: "via pinane / pinanol"}
+  - {id: "rte:dihydromyrcenol:pinene", product: mol:18479-58-8, inputs: [mol:80-56-8], note: "via dihydromyrcene"}
+  # petrochemical branch
+  - {id: "rte:linalool:acetone-acetylene", product: mol:78-70-6, inputs: [mol:67-64-1, mol:74-86-2], note: "methylbutynol → methylheptenone → dehydrolinalool"}
+  - {id: "rte:citral:isoprenol-prenal", product: mol:5392-40-5, inputs: [mol:763-32-6], note: "BASF-type route"}
+  - {id: "rte:citral:dehydrolinalool", product: mol:5392-40-5, inputs: [mol:78-70-6]}
+  # downstream
+  - {id: "rte:beta-ionone:citral", product: mol:79-77-6, inputs: [mol:5392-40-5, mol:67-64-1], note: "aldol → pseudoionone → cyclisation"}
+  - {id: "rte:vitamin-a:beta-ionone", product: mol:127-47-9, inputs: [mol:79-77-6]}
+  - {id: "rte:vitamin-e:isophytol-tmhq", product: mol:7695-91-2, inputs: [mol:505-32-8, mol:700-13-0]}
+  - {id: "rte:menthol:citral-citronellal", product: mol:2216-51-5, inputs: [mol:5392-40-5], note: "BASF-type route"}
+  - {id: "rte:menthol:myrcene", product: mol:2216-51-5, inputs: [mol:123-35-3], note: "Takasago-type asymmetric route"}
+  - {id: "rte:menthol:thymol", product: mol:2216-51-5, inputs: [], note: "from m-cresol (Symrise-type); add m-cresol as context if confirmed"}
+
+regions:
+  - {code: EU, priority: 1, languages: [en, de, fr, it, es, fi, sv]}
+  - {code: CH, priority: 1, languages: [de, fr, en]}
+  - {code: CN, priority: 1, languages: [zh, en]}
+  - {code: IN, priority: 1, languages: [en, hi]}
+  - {code: US, priority: 2, languages: [en]}
+  - {code: JP, priority: 2, languages: [ja, en]}
+  - {code: MY, priority: 2, languages: [ms, en]}
+  - {code: BR, priority: 2, languages: [pt]}
+  - {code: ID, priority: 3, languages: [id, en]}
+
+seed_sources: [I1, I2, C1, C2, E3, E10, G1, G2, G4, O1, O2]
+seed_hypotheses:          # to verify or drop
+  - "BASF, Ludwigshafen (DE): citral, linalool, menthol, vitamin A (citral fire 31 Oct 2017 → force majeure on vitamins A/E)"
+  - "BASF-PETRONAS, Kuantan (MY): citral plant reported mechanically complete Sep 2016"
+  - "Wanhua Chemical, Yantai (CN): citral 48 kt/a, launched Aug 2024, 'world's largest single-unit' (CHEManager 29 Aug 2024)"
+  - "Unsourced web claim to test: BASF citral ~40 kt/a ≈ 66% of world (faxiangongchang.com); conflicts with the Wanhua figure"
+  - "dsm-firmenich, Sisseln (CH): vitamins A/E"
+  - "Zhejiang NHU (CN): citral, vitamins A/E, linalool"
+  - "Adisseo, Commentry (FR): vitamin A"
+  - "Firmenich / DRT, Landes (FR): pine chemicals"
+  - "Symrise (DE/US), Takasago (JP): menthol, terpenes"
+  - "Privi Speciality Chemicals (IN): pine-based aroma chemicals (EC verified for the Jhagadia site)"
+  - "Kuraray (JP): isoprenoid intermediates"
+# Must-find checklist (methodology, rule 8): no new molecules or chains until the weight-3 items
+# are resolved. State is computed at build from the data (portolan/mustfind.py); `unfound` records searches
+# that came back empty, per molecule.
+must_find:
+  - id: nhu-zhejiang
+    company: "Zhejiang NHU"
+    company_ids: [co:zhejiang-nhu-co-ltd]
+    aliases: ["新和成", "浙江新和成股份有限公司"]
+    places: ["Xinchang / Shangyu, Zhejiang"]
+    sites: [site:cn-zhejiang-nhu-co-ltd-01]
+    molecules: [mol:5392-40-5, mol:78-70-6, mol:127-47-9, mol:7695-91-2, mol:505-32-8, mol:2216-51-5]
+    unfound:
+      "mol:5392-40-5": "status: only a 2021 investor reply (8,000 t/a, site not named) and a broker note citing 15,000 t/a that could not be read; cninfo annual reports unreadable from the crawler (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:78-70-6": "status/capacity: broker reports say linalool is made in-house, no tonnage or site; PDFs unreadable or 403 (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:127-47-9": "site: group capacity 8,000 t/a on a 500,000 IU basis (investor reply, Sina 2024-09-09), no plant named (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:7695-91-2": "status: broker note splits VE (50% powder) 60,000 t/a into Shandong 40,000 and Zhejiang 20,000 (Eastmoney 2024-08-26); no dated operating statement (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:505-32-8": "not found in Zhejiang: the only isophytol statement is for Shandong NHU (Eastmoney 2024-08-26) (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:2216-51-5": "status: only an aggregator confirms the 5,000 t/a citral-route plant started in 2022 (chyxx 2026-03-20); no newer production statement (run 2026-10-29-isoprenoids-mustfind)"
+  - id: nhu-shandong
+    company: "Shandong NHU (NHU group)"
+    company_ids: [co:shandong-nhu-pharmaceutical-co-ltd, co:zhejiang-nhu-co-ltd]
+    aliases: ["山东新和成药业", "山东新和成维生素", "山东新和成精化"]
+    places: ["Weifang, Shandong"]
+    sites: [site:cn-weifang-01]
+    molecules: [mol:5392-40-5, mol:78-70-6, mol:127-47-9, mol:7695-91-2, mol:505-32-8]
+    unfound:
+      "mol:5392-40-5": "status: no newer site quote; PDFs unreadable; broker text has no citral capacity or site (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:78-70-6": "not mentioned in any readable source for Weifang (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:127-47-9": "site: group vitamin A capacity only (8,000 t/a, 500,000 IU basis); Weifang named only as a production base (gelonghui 2025) (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:7695-91-2": "status: VE (50% powder) 40,000 t/a at Shandong NHU per broker note (Eastmoney 2024-08-26); no dated operating statement (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:505-32-8": "status/capacity: isophytol capacity supports 40,000 t/a VE oil (Eastmoney 2024-08-26), no tonnage or date (run 2026-10-29-isoprenoids-mustfind)"
+  - id: zhejiang-medicine
+    company: "Zhejiang Medicine"
+    company_ids: [co:zhejiang-medicine-co-ltd]
+    aliases: ["浙江医药", "新昌制药厂"]
+    places: ["Xinchang, Zhejiang"]
+    molecules: [mol:7695-91-2, mol:127-47-9]
+    unfound:
+      "mol:7695-91-2": "status/site: annual reports (cninfo 2024, 2025) unreadable (connection reset); secondary sources give 40,000 t/a VE without basis or site (jiemian 2026-04-14) (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:127-47-9": "site: secondary sources only (jiemian 2026-04-14 citing China Merchants Securities: vitamin A 5,000 t), no site or period (run 2026-10-29-isoprenoids-mustfind)"
+  - id: dsm-firmenich-vitamins
+    company: "dsm-firmenich"
+    company_ids: [co:dsm-firmenich-firmenich]
+    aliases: ["DSM Nutritional Products", "DSM"]
+    places: ["Sisseln, Switzerland", "any other site the sources show"]
+    molecules: [mol:127-47-9, mol:7695-91-2, mol:505-32-8]
+    unfound:
+      "mol:505-32-8": "no source states where dsm-firmenich makes isophytol (Sisseln location page, CHIMIA 2018 review searched) (run 2026-10-29-isoprenoids-mustfind)"
+  - id: basf-zhanjiang
+    company: "BASF"
+    company_ids: [co:basf]
+    sites: [site:cn-zhanjiang-01]
+    places: ["Zhanjiang, Guangdong"]
+    molecules: [mol:5392-40-5]
+  - id: basf-kuantan
+    company: "BASF PETRONAS Chemicals"
+    company_ids: [co:basf-petronas-chemicals-sdn-bhd]
+    sites: [site:my-gebeng-kuantan-01]
+    places: ["Gebeng, Kuantan, Malaysia"]
+    molecules: [mol:5392-40-5, mol:2216-51-5]
+    unfound:
+      "mol:2216-51-5": "status: only plans found (2013 announcement; CHEManager Sept 2016 start-up target); no operating statement (run 2026-10-29-isoprenoids-mustfind)"
+  - id: basf-ludwigshafen
+    company: "BASF"
+    company_ids: [co:basf]
+    sites: [site:de-ludwigshafen-01]
+    places: ["Ludwigshafen, Germany"]
+    molecules: [mol:78-70-6, mol:2216-51-5, mol:505-32-8, mol:79-77-6]
+    unfound:
+      "mol:505-32-8": "status: listed under force majeure in Aug 2024 (BASF release p-24-263); no later status or capacity (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:79-77-6": "status: Ionones (as a group) under force majeure in Aug 2024 (BASF release p-24-263); no later status or capacity (run 2026-10-29-isoprenoids-mustfind)"
+  - id: adisseo-commentry
+    company: "Adisseo"
+    company_ids: [co:adisseo-france-sas]
+    places: ["Commentry, France"]
+    molecules: [mol:127-47-9]
+  - id: kuraray-kamisu
+    company: "Kuraray"
+    company_ids: [co:kuraray-co-ltd]
+    places: ["Kamisu, Ibaraki, Japan"]
+    molecules: [mol:5392-40-5]
+  - id: wanhua-downstream
+    company: "Wanhua Chemical"
+    company_ids: [co:wanhua-chemical-group-co-ltd]
+    aliases: ["万华化学"]
+    places: ["Yantai, Shandong"]
+    molecules: [mol:2216-51-5, mol:127-47-9, mol:7695-91-2, mol:78-70-6, mol:79-77-6]
+    note: "anything downstream of its Yantai citral; molecules it doesn't make go to `unfound` with the searches"
+    unfound:
+      "mol:2216-51-5": "status: only search snippets list Wanhua among L-menthol makers; the 1,000 t/a demo unit is on the map, no newer dated source (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:7695-91-2": "not found: broker reports mention patents and downstream potential only, no plant (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:78-70-6": "not found: no source says Wanhua makes linalool (run 2026-10-29-isoprenoids-mustfind)"
+      "mol:79-77-6": "not found: no source says Wanhua makes beta-ionone (run 2026-10-29-isoprenoids-mustfind)"
+  - id: menthol-symrise
+    company: "Symrise"
+    company_ids: [co:symrise-ag]
+    places: ["Holzminden, Germany", "Charleston area, South Carolina, US"]
+    molecules: [mol:2216-51-5]
+  - id: menthol-takasago
+    company: "Takasago"
+    company_ids: [co:takasago-international-corporation]
+    places: ["Iwata, Shizuoka, Japan"]
+    molecules: [mol:2216-51-5]
+    unfound:
+      "mol:2216-51-5": "status: the latest securities report (FY to March 2026) lists menthol only generically and Iwata as a fragrance plant; nothing newer than 2007 on L-menthol at Iwata (run 2026-10-29-isoprenoids-mustfind)"
+  - id: menthol-china-citral-route
+    company: "Chinese synthetic L-menthol makers (citral or m-cresol route)"
+    company_ids: [co:anhui-huilong-agricultural-means-of-production-co-ltd, co:zhejiang-nhu-co-ltd, co:wanhua-chemical-group-co-ltd]
+    places: ["China"]
+    molecules: [mol:2216-51-5]
+  - id: menthol-india-natural
+    company: "Largest Indian natural menthol producers and exporters"
+    company_ids: [co:kelvin-natural-mint-pvt-ltd, co:norex-flavours-private-limited, co:arora-aromatics-private-limited, co:neeru-enterprises]
+    places: ["Uttar Pradesh (Barabanki, Rampur, Chandausi, Bareilly)"]
+    molecules: [mol:2216-51-5]
+  - id: xinfa-vitamin-a
+    company: "Xinfa Pharmaceutical (新发药业)"
+    aliases: ["新发药业", "新发药业有限公司", "Shandong Xinfa"]
+    places: ["Dongying, Shandong"]
+    molecules: [mol:127-47-9]
+    note: "named as a main vitamin A producer in Kingdomway's 2024 bond prospectus"
+    unfound:
+      "mol:127-47-9": "site: a 2021 trade item gives a 9,000 t/a vitamin A acetate project (on the map at company level, planned); search snippets point to Kenli, Dongying, not verified on a readable page (run 2026-10-29-isoprenoids-mustfind-2)"
+  - id: kingdomway-vitamin-a
+    company: "Xiamen Kingdomway (金达威)"
+    company_ids: [co:xiamen-kingdomway-group-co-ltd]
+    aliases: ["金达威", "厦门金达威维生素", "内蒙古金达威"]
+    places: ["Xiamen, Fujian", "Inner Mongolia"]
+    molecules: [mol:127-47-9]
+    note: "vitamin A capacity 4,000 t (2022) per its own prospectus; site to confirm"
+sanity:
+  capacity_tpa: {min: 10, max: 200000}
+buyer_segments: [fragrance_houses, flavour_houses, aroma_chemical_traders, feed_premix_makers, vitamin_distributors, cosmetics_brand_procurement, pulp_mills_CST_sellers, trade_press_F&F]
+adjacent_chains: ["chain:aroma-aromatics (vanillin, guaiacol; EU AD 131.1% on Chinese vanillin, Reg 2025/1151)", "chain:pine-chemicals (tall oil, rosin; CTO vs renewable diesel)", "chain:carotenoids"]
+budget: {usd_max: 0}   # metered API spend cap per run; 0 = subscription or free models only
+first_molecules: [mol:5392-40-5, mol:78-70-6, mol:79-77-6]   # citral first (most concentrated node), then linalool, beta-ionone
+open_questions:
+  - "Captive vs merchant share of citral: how much ever leaves the producer's site?"
+  - "Do Indian ECs cover enough of the Indian terpene industry to make India's coverage honest?"

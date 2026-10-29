@@ -1,0 +1,215 @@
+{
+  "$defs": {
+    "SubjectRef": {
+      "additionalProperties": false,
+      "description": "What a claim is about: a known ID, or a candidate on another line (+ molecule for a unit).",
+      "properties": {
+        "candidate_company": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Company"
+        },
+        "candidate_site": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Site"
+        },
+        "company": {
+          "anyOf": [
+            {
+              "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Company"
+        },
+        "molecule": {
+          "anyOf": [
+            {
+              "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Molecule"
+        },
+        "site": {
+          "anyOf": [
+            {
+              "pattern": "^site:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Site"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "pattern": "^unit:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}:[a-z0-9]+(?:-[a-z0-9]+)*(:\\d{2})?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        }
+      },
+      "title": "SubjectRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "as_of": {
+      "format": "date",
+      "title": "As Of",
+      "type": "string"
+    },
+    "capacity_basis": {
+      "anyOf": [
+        {
+          "enum": [
+            "nameplate",
+            "permitted",
+            "design",
+            "estimated",
+            "production"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Capacity Basis"
+    },
+    "evidence_refs": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Evidence Refs",
+      "type": "array"
+    },
+    "field": {
+      "enum": [
+        "capacity",
+        "status",
+        "operator",
+        "parent",
+        "share_pct",
+        "start_year",
+        "end_year",
+        "route",
+        "lat_lon",
+        "captive_share",
+        "exists",
+        "world_capacity",
+        "world_demand"
+      ],
+      "title": "Field",
+      "type": "string"
+    },
+    "kind": {
+      "const": "claim",
+      "title": "Kind",
+      "type": "string"
+    },
+    "subject_ref": {
+      "$ref": "#/$defs/SubjectRef"
+    },
+    "unit_raw": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unit Raw"
+    },
+    "valid_from": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid From"
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid To"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "title": "Value"
+    }
+  },
+  "required": [
+    "kind",
+    "subject_ref",
+    "field",
+    "value",
+    "as_of",
+    "evidence_refs"
+  ],
+  "title": "OutClaim",
+  "type": "object"
+}

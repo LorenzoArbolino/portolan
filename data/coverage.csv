@@ -1,0 +1,145 @@
+chain_id,country,molecule_id,units_known,units_with_status,units_with_capacity,eu_imports_t_latest,eu_imports_year,hs6,note
+chain:isoprenoids,CH,mol:763-32-6,0,0,0,1623.2,2025,290529,"gap: EU imported 1623.2 t of HS 290529 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:763-32-6,1,0,0,1233.5,2025,290529,1 of 1 known units lack a status claim
+chain:isoprenoids,GB,mol:763-32-6,0,0,0,20.2,2025,290529,"gap: EU imported 20.2 t of HS 290529 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:763-32-6,0,0,0,437.2,2025,290529,"gap: EU imported 437.2 t of HS 290529 from IN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,JP,mol:763-32-6,1,0,0,6006.1,2025,290529,1 of 1 known units lack a status claim
+chain:isoprenoids,MX,mol:763-32-6,0,0,0,49.3,2025,290529,"gap: EU imported 49.3 t of HS 290529 from MX in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:763-32-6,0,0,0,562.4,2025,290529,"gap: EU imported 562.4 t of HS 290529 from MY in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:763-32-6,0,0,0,59.9,2025,290529,"gap: EU imported 59.9 t of HS 290529 from US in 2025, no unit known (J11 lead)"
+chain:isoprenoids,AR,mol:8006-64-2,0,0,0,40.0,2025,380510,"gap: EU imported 40 t of HS 380510 from AR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,AU,mol:8006-64-2,0,0,0,118.4,2025,380510,"gap: EU imported 118.4 t of HS 380510 from AU in 2025, no unit known (J11 lead)"
+chain:isoprenoids,BR,mol:8006-64-2,1,0,0,1750.0,2025,380510,1 of 1 known units lack a status claim
+chain:isoprenoids,CN,mol:8006-64-2,3,0,2,139.8,2025,380510,3 of 3 known units lack a status claim
+chain:isoprenoids,FI,mol:8006-64-2,4,0,0,,,,4 of 4 known units lack a status claim
+chain:isoprenoids,FR,mol:8006-64-2,1,0,0,,,,1 of 1 known units lack a status claim
+chain:isoprenoids,GB,mol:8006-64-2,0,0,0,16.9,2025,380510,"gap: EU imported 16.9 t of HS 380510 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,ID,mol:8006-64-2,1,0,0,60.2,2025,380510,1 of 1 known units lack a status claim
+chain:isoprenoids,IN,mol:8006-64-2,2,0,0,201.4,2025,380510,2 of 2 known units lack a status claim
+chain:isoprenoids,RU,mol:8006-64-2,0,0,0,1676.6,2023,380510,"gap: EU imported 1676.6 t of HS 380510 from RU in 2023, no unit known (J11 lead)"
+chain:isoprenoids,SE,mol:8006-64-2,2,0,0,,,,2 of 2 known units lack a status claim
+chain:isoprenoids,US,mol:8006-64-2,42,37,0,,,,5 of 42 known units lack a status claim
+chain:isoprenoids,VN,mol:8006-64-2,0,0,0,208.0,2025,380510,"gap: EU imported 208 t of HS 380510 from VN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,ZA,mol:8006-64-2,0,0,0,462.2,2025,380510,"gap: EU imported 462.2 t of HS 380510 from ZA in 2025, no unit known (J11 lead)"
+chain:isoprenoids,BR,mol:80-56-8,0,0,0,3193.2,2025,290219,"gap: EU imported 3193.2 t of HS 290219 from BR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CA,mol:80-56-8,0,0,0,10.8,2025,290219,"gap: EU imported 10.8 t of HS 290219 from CA in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CH,mol:80-56-8,0,0,0,46.5,2025,290219,"gap: EU imported 46.5 t of HS 290219 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:80-56-8,0,0,0,37334.2,2025,290219,"gap: EU imported 37334.2 t of HS 290219 from CN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,GB,mol:80-56-8,0,0,0,251.2,2025,290219,"gap: EU imported 251.2 t of HS 290219 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,ID,mol:80-56-8,1,0,0,103.9,2025,290219,1 of 1 known units lack a status claim
+chain:isoprenoids,IN,mol:80-56-8,1,0,1,1059.8,2025,290219,1 of 1 known units lack a status claim
+chain:isoprenoids,JP,mol:80-56-8,0,0,0,448.4,2025,290219,"gap: EU imported 448.4 t of HS 290219 from JP in 2025, no unit known (J11 lead)"
+chain:isoprenoids,KR,mol:80-56-8,0,0,0,10879.1,2025,290219,"gap: EU imported 10879.1 t of HS 290219 from KR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,RU,mol:80-56-8,0,0,0,3462.3,2022,290219,"gap: EU imported 3462.3 t of HS 290219 from RU in 2022, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:80-56-8,2,1,0,13453.6,2025,290219,1 of 2 known units lack a status claim
+chain:isoprenoids,ZA,mol:80-56-8,0,0,0,12.9,2025,290219,"gap: EU imported 12.9 t of HS 290219 from ZA in 2025, no unit known (J11 lead)"
+chain:isoprenoids,BR,mol:127-91-3,0,0,0,3193.2,2025,290219,"gap: EU imported 3193.2 t of HS 290219 from BR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CA,mol:127-91-3,0,0,0,10.8,2025,290219,"gap: EU imported 10.8 t of HS 290219 from CA in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CH,mol:127-91-3,0,0,0,46.5,2025,290219,"gap: EU imported 46.5 t of HS 290219 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:127-91-3,1,0,1,37334.2,2025,290219,1 of 1 known units lack a status claim
+chain:isoprenoids,GB,mol:127-91-3,0,0,0,251.2,2025,290219,"gap: EU imported 251.2 t of HS 290219 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,ID,mol:127-91-3,0,0,0,103.9,2025,290219,"gap: EU imported 103.9 t of HS 290219 from ID in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:127-91-3,1,0,1,1059.8,2025,290219,1 of 1 known units lack a status claim
+chain:isoprenoids,JP,mol:127-91-3,1,0,0,448.4,2025,290219,1 of 1 known units lack a status claim
+chain:isoprenoids,KR,mol:127-91-3,0,0,0,10879.1,2025,290219,"gap: EU imported 10879.1 t of HS 290219 from KR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,RU,mol:127-91-3,0,0,0,3462.3,2022,290219,"gap: EU imported 3462.3 t of HS 290219 from RU in 2022, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:127-91-3,2,1,0,13453.6,2025,290219,1 of 2 known units lack a status claim
+chain:isoprenoids,ZA,mol:127-91-3,0,0,0,12.9,2025,290219,"gap: EU imported 12.9 t of HS 290219 from ZA in 2025, no unit known (J11 lead)"
+chain:isoprenoids,AR,mol:123-35-3,0,0,0,20.7,2025,290129,"gap: EU imported 20.7 t of HS 290129 from AR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,BR,mol:123-35-3,0,0,0,3097.1,2025,290129,"gap: EU imported 3097.1 t of HS 290129 from BR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CA,mol:123-35-3,0,0,0,26502.8,2025,290129,"gap: EU imported 26502.8 t of HS 290129 from CA in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CH,mol:123-35-3,0,0,0,124.9,2025,290129,"gap: EU imported 124.9 t of HS 290129 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:123-35-3,0,0,0,982.6,2025,290129,"gap: EU imported 982.6 t of HS 290129 from CN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,GB,mol:123-35-3,0,0,0,303.7,2025,290129,"gap: EU imported 303.7 t of HS 290129 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:123-35-3,1,1,1,265.6,2025,290129,all known units have a status claim
+chain:isoprenoids,JP,mol:123-35-3,1,0,0,545.0,2025,290129,1 of 1 known units lack a status claim
+chain:isoprenoids,NO,mol:123-35-3,0,0,0,13.7,2025,290129,"gap: EU imported 13.7 t of HS 290129 from NO in 2025, no unit known (J11 lead)"
+chain:isoprenoids,RU,mol:123-35-3,0,0,0,300.9,2022,290129,"gap: EU imported 300.9 t of HS 290129 from RU in 2022, no unit known (J11 lead)"
+chain:isoprenoids,SG,mol:123-35-3,0,0,0,79.3,2025,290129,"gap: EU imported 79.3 t of HS 290129 from SG in 2025, no unit known (J11 lead)"
+chain:isoprenoids,TR,mol:123-35-3,0,0,0,61.4,2025,290129,"gap: EU imported 61.4 t of HS 290129 from TR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:123-35-3,2,1,0,204414.9,2025,290129,1 of 2 known units lack a status claim
+chain:isoprenoids,ZA,mol:123-35-3,0,0,0,74857.4,2025,290129,"gap: EU imported 74857.4 t of HS 290129 from ZA in 2025, no unit known (J11 lead)"
+chain:isoprenoids,BR,mol:78-70-6,2,1,0,,,,1 of 2 known units lack a status claim
+chain:isoprenoids,CH,mol:78-70-6,0,0,0,1899.1,2025,290522,"gap: EU imported 1899.1 t of HS 290522 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:78-70-6,1,0,1,3916.8,2025,290522,1 of 1 known units lack a status claim
+chain:isoprenoids,DE,mol:78-70-6,2,1,0,,,,1 of 2 known units lack a status claim
+chain:isoprenoids,GB,mol:78-70-6,0,0,0,21.3,2025,290522,"gap: EU imported 21.3 t of HS 290522 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:78-70-6,2,0,0,3101.3,2025,290522,2 of 2 known units lack a status claim
+chain:isoprenoids,JP,mol:78-70-6,0,0,0,29.1,2025,290522,"gap: EU imported 29.1 t of HS 290522 from JP in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:78-70-6,0,0,0,3343.2,2025,290522,"gap: EU imported 3343.2 t of HS 290522 from MY in 2025, no unit known (J11 lead)"
+chain:isoprenoids,SG,mol:78-70-6,0,0,0,32.5,2025,290522,"gap: EU imported 32.5 t of HS 290522 from SG in 2025, no unit known (J11 lead)"
+chain:isoprenoids,TR,mol:78-70-6,0,0,0,14.0,2025,290522,"gap: EU imported 14 t of HS 290522 from TR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:78-70-6,3,1,0,3276.7,2025,290522,2 of 3 known units lack a status claim
+chain:isoprenoids,CH,mol:106-24-1,0,0,0,1899.1,2025,290522,"gap: EU imported 1899.1 t of HS 290522 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:106-24-1,2,0,2,3916.8,2025,290522,2 of 2 known units lack a status claim
+chain:isoprenoids,GB,mol:106-24-1,0,0,0,21.3,2025,290522,"gap: EU imported 21.3 t of HS 290522 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:106-24-1,2,0,0,3101.3,2025,290522,2 of 2 known units lack a status claim
+chain:isoprenoids,JP,mol:106-24-1,0,0,0,29.1,2025,290522,"gap: EU imported 29.1 t of HS 290522 from JP in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:106-24-1,0,0,0,3343.2,2025,290522,"gap: EU imported 3343.2 t of HS 290522 from MY in 2025, no unit known (J11 lead)"
+chain:isoprenoids,SG,mol:106-24-1,0,0,0,32.5,2025,290522,"gap: EU imported 32.5 t of HS 290522 from SG in 2025, no unit known (J11 lead)"
+chain:isoprenoids,TR,mol:106-24-1,0,0,0,14.0,2025,290522,"gap: EU imported 14 t of HS 290522 from TR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:106-24-1,3,1,0,3276.7,2025,290522,2 of 3 known units lack a status claim
+chain:isoprenoids,BR,mol:5392-40-5,0,0,0,10.0,2025,291219,"gap: EU imported 10 t of HS 291219 from BR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:5392-40-5,3,2,2,3692.9,2025,291219,1 of 3 known units lack a status claim
+chain:isoprenoids,DE,mol:5392-40-5,2,0,2,,,,2 of 2 known units lack a status claim
+chain:isoprenoids,GB,mol:5392-40-5,0,0,0,1102.5,2025,291219,"gap: EU imported 1102.5 t of HS 291219 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:5392-40-5,1,1,1,1714.6,2025,291219,all known units have a status claim
+chain:isoprenoids,JP,mol:5392-40-5,0,0,0,1329.6,2025,291219,"gap: EU imported 1329.6 t of HS 291219 from JP in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MX,mol:5392-40-5,0,0,0,10.0,2025,291219,"gap: EU imported 10 t of HS 291219 from MX in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:5392-40-5,1,1,0,4634.7,2025,291219,all known units have a status claim
+chain:isoprenoids,SG,mol:5392-40-5,0,0,0,13.0,2025,291219,"gap: EU imported 13 t of HS 291219 from SG in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:5392-40-5,0,0,0,19157.4,2025,291219,"gap: EU imported 19157.4 t of HS 291219 from US in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:2216-51-5,0,0,0,336.7,2025,290611,"gap: EU imported 336.7 t of HS 290611 from CN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,DE,mol:2216-51-5,3,2,0,,,,1 of 3 known units lack a status claim
+chain:isoprenoids,IN,mol:2216-51-5,3,0,0,1884.7,2025,290611,3 of 3 known units lack a status claim
+chain:isoprenoids,JP,mol:2216-51-5,1,0,0,110.7,2025,290611,1 of 1 known units lack a status claim
+chain:isoprenoids,MY,mol:2216-51-5,1,0,0,,,,1 of 1 known units lack a status claim
+chain:isoprenoids,US,mol:2216-51-5,2,0,0,119.2,2025,290611,2 of 2 known units lack a status claim
+chain:isoprenoids,BR,mol:18479-58-8,0,0,0,387.6,2025,290519,"gap: EU imported 387.6 t of HS 290519 from BR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CH,mol:18479-58-8,0,0,0,550.6,2025,290519,"gap: EU imported 550.6 t of HS 290519 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:18479-58-8,0,0,0,7489.0,2025,290519,"gap: EU imported 7489 t of HS 290519 from CN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,GB,mol:18479-58-8,0,0,0,555.7,2025,290519,"gap: EU imported 555.7 t of HS 290519 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,ID,mol:18479-58-8,0,0,0,3425.1,2025,290519,"gap: EU imported 3425.1 t of HS 290519 from ID in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:18479-58-8,1,0,0,1715.1,2025,290519,1 of 1 known units lack a status claim
+chain:isoprenoids,JP,mol:18479-58-8,0,0,0,336.5,2025,290519,"gap: EU imported 336.5 t of HS 290519 from JP in 2025, no unit known (J11 lead)"
+chain:isoprenoids,KR,mol:18479-58-8,0,0,0,92.6,2025,290519,"gap: EU imported 92.6 t of HS 290519 from KR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MX,mol:18479-58-8,0,0,0,3449.4,2025,290519,"gap: EU imported 3449.4 t of HS 290519 from MX in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:18479-58-8,0,0,0,1488.2,2025,290519,"gap: EU imported 1488.2 t of HS 290519 from MY in 2025, no unit known (J11 lead)"
+chain:isoprenoids,TH,mol:18479-58-8,0,0,0,341.9,2025,290519,"gap: EU imported 341.9 t of HS 290519 from TH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:18479-58-8,3,1,0,8972.6,2025,290519,2 of 3 known units lack a status claim
+chain:isoprenoids,CH,mol:79-77-6,0,0,0,671.5,2025,291423,"gap: EU imported 671.5 t of HS 291423 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:79-77-6,0,0,0,1070.2,2025,291423,"gap: EU imported 1070.2 t of HS 291423 from CN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,DE,mol:79-77-6,2,0,0,,,,2 of 2 known units lack a status claim
+chain:isoprenoids,IN,mol:79-77-6,0,0,0,59.6,2025,291423,"gap: EU imported 59.6 t of HS 291423 from IN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,BR,mol:505-32-8,0,0,0,387.6,2025,290519,"gap: EU imported 387.6 t of HS 290519 from BR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CH,mol:505-32-8,0,0,0,550.6,2025,290519,"gap: EU imported 550.6 t of HS 290519 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:505-32-8,0,0,0,7489.0,2025,290519,"gap: EU imported 7489 t of HS 290519 from CN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,DE,mol:505-32-8,1,0,0,,,,1 of 1 known units lack a status claim
+chain:isoprenoids,GB,mol:505-32-8,0,0,0,555.7,2025,290519,"gap: EU imported 555.7 t of HS 290519 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,ID,mol:505-32-8,0,0,0,3425.1,2025,290519,"gap: EU imported 3425.1 t of HS 290519 from ID in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:505-32-8,0,0,0,1715.1,2025,290519,"gap: EU imported 1715.1 t of HS 290519 from IN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,JP,mol:505-32-8,0,0,0,336.5,2025,290519,"gap: EU imported 336.5 t of HS 290519 from JP in 2025, no unit known (J11 lead)"
+chain:isoprenoids,KR,mol:505-32-8,0,0,0,92.6,2025,290519,"gap: EU imported 92.6 t of HS 290519 from KR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MX,mol:505-32-8,0,0,0,3449.4,2025,290519,"gap: EU imported 3449.4 t of HS 290519 from MX in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:505-32-8,0,0,0,1488.2,2025,290519,"gap: EU imported 1488.2 t of HS 290519 from MY in 2025, no unit known (J11 lead)"
+chain:isoprenoids,TH,mol:505-32-8,0,0,0,341.9,2025,290519,"gap: EU imported 341.9 t of HS 290519 from TH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:505-32-8,0,0,0,8972.6,2025,290519,"gap: EU imported 8972.6 t of HS 290519 from US in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CH,mol:127-47-9,0,0,0,111.7,2025,293621,"gap: EU imported 111.7 t of HS 293621 from CH in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CN,mol:127-47-9,1,0,0,1608.6,2025,293621,1 of 1 known units lack a status claim
+chain:isoprenoids,DE,mol:127-47-9,1,0,0,,,,1 of 1 known units lack a status claim
+chain:isoprenoids,FR,mol:127-47-9,1,0,0,,,,1 of 1 known units lack a status claim
+chain:isoprenoids,GB,mol:127-47-9,0,0,0,17.6,2025,293621,"gap: EU imported 17.6 t of HS 293621 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:127-47-9,0,0,0,17.2,2025,293621,"gap: EU imported 17.2 t of HS 293621 from IN in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:127-47-9,0,0,0,19.7,2025,293621,"gap: EU imported 19.7 t of HS 293621 from MY in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:127-47-9,0,0,0,119.8,2025,293621,"gap: EU imported 119.8 t of HS 293621 from US in 2025, no unit known (J11 lead)"
+chain:isoprenoids,AR,mol:7695-91-2,0,0,0,183.7,2025,293628,"gap: EU imported 183.7 t of HS 293628 from AR in 2025, no unit known (J11 lead)"
+chain:isoprenoids,CH,mol:7695-91-2,1,0,1,16650.1,2025,293628,1 of 1 known units lack a status claim
+chain:isoprenoids,CN,mol:7695-91-2,3,1,1,29601.0,2025,293628,2 of 3 known units lack a status claim
+chain:isoprenoids,DE,mol:7695-91-2,2,0,1,,,,2 of 2 known units lack a status claim
+chain:isoprenoids,GB,mol:7695-91-2,0,0,0,106.9,2025,293628,"gap: EU imported 106.9 t of HS 293628 from GB in 2025, no unit known (J11 lead)"
+chain:isoprenoids,ID,mol:7695-91-2,0,0,0,20.7,2025,293628,"gap: EU imported 20.7 t of HS 293628 from ID in 2025, no unit known (J11 lead)"
+chain:isoprenoids,IN,mol:7695-91-2,1,0,1,163.3,2025,293628,1 of 1 known units lack a status claim
+chain:isoprenoids,JP,mol:7695-91-2,0,0,0,19.2,2025,293628,"gap: EU imported 19.2 t of HS 293628 from JP in 2025, no unit known (J11 lead)"
+chain:isoprenoids,MY,mol:7695-91-2,0,0,0,37.5,2025,293628,"gap: EU imported 37.5 t of HS 293628 from MY in 2025, no unit known (J11 lead)"
+chain:isoprenoids,SG,mol:7695-91-2,0,0,0,25.4,2025,293628,"gap: EU imported 25.4 t of HS 293628 from SG in 2025, no unit known (J11 lead)"
+chain:isoprenoids,US,mol:7695-91-2,0,0,0,533.3,2025,293628,"gap: EU imported 533.3 t of HS 293628 from US in 2025, no unit known (J11 lead)"

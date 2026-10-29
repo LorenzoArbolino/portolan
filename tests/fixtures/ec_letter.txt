@@ -1,0 +1,7 @@
+Environmental Clearance (test fixture, fictitious applicant)
+Proposed expansion of synthetic organic chemicals manufacturing unit at Plot 1, Example Industrial Estate.
+
+Sr. No.  Product                        Existing (MT/Month)  Proposed (MT/Month)  Total (MT/Month)
+1        Dihydromyrcenol                 150                  250                  400
+2        Linalool                        80                   120                  200
+3        Citral                          --                   100                  100

@@ -1,0 +1,80 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "aliases": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
+    },
+    "evidence_refs": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Evidence Refs",
+      "type": "array"
+    },
+    "hq_country": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Z]{2}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Hq Country"
+    },
+    "kind": {
+      "const": "candidate_company",
+      "title": "Kind",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "type": {
+      "default": [],
+      "items": {
+        "enum": [
+          "producer",
+          "trader",
+          "distributor",
+          "converter",
+          "brand_owner",
+          "investor",
+          "licensor"
+        ],
+        "type": "string"
+      },
+      "title": "Type",
+      "type": "array"
+    },
+    "website": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Website"
+    }
+  },
+  "required": [
+    "kind",
+    "name",
+    "evidence_refs"
+  ],
+  "title": "OutCandidateCompany",
+  "type": "object"
+}

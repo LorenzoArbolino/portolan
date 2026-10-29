@@ -1,0 +1,171 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "cas": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cas"
+    },
+    "chain_ids": {
+      "default": [],
+      "items": {
+        "pattern": "^chain:[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "title": "Chain Ids",
+      "type": "array"
+    },
+    "cn8": {
+      "default": [],
+      "items": {
+        "pattern": "^\\d{8}$",
+        "type": "string"
+      },
+      "title": "Cn8",
+      "type": "array"
+    },
+    "ec": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ec"
+    },
+    "ets_activity": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ets Activity"
+    },
+    "family_tags": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Family Tags",
+      "type": "array"
+    },
+    "hs6": {
+      "default": [],
+      "items": {
+        "pattern": "^\\d{6}$",
+        "type": "string"
+      },
+      "title": "Hs6",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+      "title": "Id",
+      "type": "string"
+    },
+    "inchikey": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Inchikey"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    },
+    "physical_form": {
+      "anyOf": [
+        {
+          "enum": [
+            "solid",
+            "liquid",
+            "gas",
+            "solution"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Physical Form"
+    },
+    "prodcom": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Prodcom",
+      "type": "array"
+    },
+    "synonyms": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Synonyms",
+      "type": "array"
+    },
+    "tier": {
+      "enum": [
+        "base",
+        "intermediate",
+        "specialty"
+      ],
+      "title": "Tier",
+      "type": "string"
+    },
+    "un_number": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Un Number"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "tier"
+  ],
+  "title": "Molecule",
+  "type": "object"
+}

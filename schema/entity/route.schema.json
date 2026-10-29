@@ -1,0 +1,108 @@
+{
+  "$defs": {
+    "RouteCoproduct": {
+      "additionalProperties": false,
+      "properties": {
+        "molecule_id": {
+          "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+          "title": "Molecule Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "molecule_id"
+      ],
+      "title": "RouteCoproduct",
+      "type": "object"
+    },
+    "RouteInput": {
+      "additionalProperties": false,
+      "properties": {
+        "molecule_id": {
+          "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+          "title": "Molecule Id",
+          "type": "string"
+        },
+        "role": {
+          "default": "feedstock",
+          "enum": [
+            "feedstock",
+            "reagent",
+            "catalyst"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "molecule_id"
+      ],
+      "title": "RouteInput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "coproducts": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/RouteCoproduct"
+      },
+      "title": "Coproducts",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^rte:[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "inputs": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/RouteInput"
+      },
+      "title": "Inputs",
+      "type": "array"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    },
+    "product_id": {
+      "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+      "title": "Product Id",
+      "type": "string"
+    },
+    "route_name": {
+      "title": "Route Name",
+      "type": "string"
+    },
+    "tech_owner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tech Owner"
+    }
+  },
+  "required": [
+    "id",
+    "product_id",
+    "route_name"
+  ],
+  "title": "Route",
+  "type": "object"
+}

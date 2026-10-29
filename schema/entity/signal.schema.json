@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "title": "Kind",
+      "type": "string"
+    },
+    "period": {
+      "title": "Period",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "subject_id": {
+      "pattern": "^(mol|rte|site|unit|co|ev|tm):\\S+$",
+      "title": "Subject Id",
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "value": {
+      "title": "Value",
+      "type": "number"
+    }
+  },
+  "required": [
+    "subject_id",
+    "kind",
+    "period",
+    "value",
+    "unit",
+    "source"
+  ],
+  "title": "Signal",
+  "type": "object"
+}

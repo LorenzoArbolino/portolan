@@ -1,0 +1,162 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "archive_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Archive Url"
+    },
+    "cites_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cites Url"
+    },
+    "content_sha256": {
+      "anyOf": [
+        {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content Sha256"
+    },
+    "id": {
+      "pattern": "^src:[0-9a-f]{12}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "language": {
+      "description": "ISO 639-1",
+      "pattern": "^[a-z]{2}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "locator": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Locator"
+    },
+    "published_at": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Published At"
+    },
+    "publisher": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Publisher"
+    },
+    "quote": {
+      "maxLength": 400,
+      "minLength": 1,
+      "title": "Quote",
+      "type": "string"
+    },
+    "quote_check": {
+      "anyOf": [
+        {
+          "enum": [
+            "pass",
+            "fail",
+            "unreachable",
+            "pdf_ok",
+            "manual"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Quote Check"
+    },
+    "quote_en": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Quote En"
+    },
+    "retrieved_at": {
+      "format": "date-time",
+      "title": "Retrieved At",
+      "type": "string"
+    },
+    "source_type": {
+      "enum": [
+        "regulator",
+        "permit",
+        "company_primary",
+        "exchange_filing",
+        "trade_measure",
+        "trade_press",
+        "aggregator",
+        "association",
+        "operator_claimed",
+        "other"
+      ],
+      "title": "Source Type",
+      "type": "string"
+    },
+    "url": {
+      "title": "Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "url",
+    "retrieved_at",
+    "source_type",
+    "language",
+    "quote"
+  ],
+  "title": "Evidence",
+  "type": "object"
+}

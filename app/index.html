@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Portolan · Isoprenoids</title>
+    <meta
+      name="description"
+      content="Who makes the world's citral, linalool, menthol and vitamin E: every plant, capacity and owner, with sources."
+    />
+    <meta name="theme-color" content="#f3f5f6" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <header class="top">
+      <div class="topbar">
+        <a class="wordmark" href="#top" aria-label="Portolan">Portolan</a>
+        <span class="chain" id="chain-name">Isoprenoids</span>
+        <label class="search">
+          <span class="sr">Search plants and companies</span>
+          <input id="q" type="search" placeholder="Search a plant, company or country" autocomplete="off" />
+        </label>
+        <button type="button" class="theme" id="theme" aria-label="Switch to dark mode" title="Light / dark"></button>
+      </div>
+      <nav class="tabs" id="tabs" aria-label="Molecules"></nav>
+    </header>
+
+    <main id="top">
+      <section class="mapwrap" id="map" aria-label="Map of plants">
+        <div id="mapcanvas"></div>
+        <div class="legend" id="legend"></div>
+        <aside class="sheet" id="sheet" hidden aria-live="polite"></aside>
+      </section>
+
+      <section class="kpis" id="kpis" aria-label="Key figures"></section>
+
+      <div class="page">
+        <section id="producers">
+          <header class="sec"><h2>Who makes it</h2><p class="dek" id="producers-dek"></p></header>
+          <div id="league"></div>
+        </section>
+
+        <section id="plants">
+          <header class="sec">
+            <h2>Plants</h2>
+            <p class="dek">Tap any figure for its source. <span class="est-key">~ = estimate</span></p>
+          </header>
+          <div class="filters" id="filters"></div>
+          <div class="tablewrap"><table class="grid" id="plants-table"></table></div>
+          <button class="more" id="plants-more" type="button" hidden></button>
+        </section>
+
+        <section id="chain">
+          <header class="sec">
+            <h2>The chain</h2>
+            <p class="dek">Base chemicals to end products, following the production routes. Tap a molecule to load it.</p>
+          </header>
+          <div class="chainwrap" id="chain-graph"></div>
+        </section>
+
+        <section id="trade">
+          <header class="sec"><h2>Trade flows</h2><p class="dek" id="trade-dek"></p></header>
+          <div class="flowwrap" id="flow-chart"></div>
+          <div id="trade-body"></div>
+        </section>
+
+        <section id="events">
+          <header class="sec"><h2>News</h2><p class="dek">Fires, start-ups, closures, deals.</p></header>
+          <ol class="news" id="event-list"></ol>
+        </section>
+
+        <section id="method">
+          <header class="sec"><h2>How to read this</h2></header>
+          <div class="method" id="method-body"></div>
+        </section>
+      </div>
+    </main>
+
+    <div class="pop" id="pop" role="dialog" aria-modal="false" hidden></div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,695 @@
+{
+  "$defs": {
+    "Magnitude": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Magnitude",
+      "type": "object"
+    },
+    "OutCandidateCompany": {
+      "additionalProperties": false,
+      "properties": {
+        "aliases": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        },
+        "evidence_refs": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "hq_country": {
+          "anyOf": [
+            {
+              "pattern": "^[A-Z]{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Hq Country"
+        },
+        "kind": {
+          "const": "candidate_company",
+          "title": "Kind",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "default": [],
+          "items": {
+            "enum": [
+              "producer",
+              "trader",
+              "distributor",
+              "converter",
+              "brand_owner",
+              "investor",
+              "licensor"
+            ],
+            "type": "string"
+          },
+          "title": "Type",
+          "type": "array"
+        },
+        "website": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Website"
+        }
+      },
+      "required": [
+        "kind",
+        "name",
+        "evidence_refs"
+      ],
+      "title": "OutCandidateCompany",
+      "type": "object"
+    },
+    "OutCandidateSite": {
+      "additionalProperties": false,
+      "properties": {
+        "address": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Address"
+        },
+        "admin1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Admin1"
+        },
+        "company_ref": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Company Ref"
+        },
+        "country": {
+          "pattern": "^[A-Z]{2}$",
+          "title": "Country",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "kind": {
+          "const": "candidate_site",
+          "title": "Kind",
+          "type": "string"
+        },
+        "locality": {
+          "minLength": 1,
+          "title": "Locality",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "park_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Park Name"
+        },
+        "registry_ids": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "default": {},
+          "title": "Registry Ids",
+          "type": "object"
+        }
+      },
+      "required": [
+        "kind",
+        "name",
+        "country",
+        "locality",
+        "evidence_refs"
+      ],
+      "title": "OutCandidateSite",
+      "type": "object"
+    },
+    "OutClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "as_of": {
+          "format": "date",
+          "title": "As Of",
+          "type": "string"
+        },
+        "capacity_basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "nameplate",
+                "permitted",
+                "design",
+                "estimated",
+                "production"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capacity Basis"
+        },
+        "evidence_refs": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "field": {
+          "enum": [
+            "capacity",
+            "status",
+            "operator",
+            "parent",
+            "share_pct",
+            "start_year",
+            "end_year",
+            "route",
+            "lat_lon",
+            "captive_share",
+            "exists",
+            "world_capacity",
+            "world_demand"
+          ],
+          "title": "Field",
+          "type": "string"
+        },
+        "kind": {
+          "const": "claim",
+          "title": "Kind",
+          "type": "string"
+        },
+        "subject_ref": {
+          "$ref": "#/$defs/SubjectRef"
+        },
+        "unit_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit Raw"
+        },
+        "valid_from": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Valid From"
+        },
+        "valid_to": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Valid To"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "kind",
+        "subject_ref",
+        "field",
+        "value",
+        "as_of",
+        "evidence_refs"
+      ],
+      "title": "OutClaim",
+      "type": "object"
+    },
+    "OutEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "date_precision": {
+          "default": "day",
+          "enum": [
+            "day",
+            "month",
+            "quarter",
+            "year"
+          ],
+          "title": "Date Precision",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "kind": {
+          "const": "event",
+          "title": "Kind",
+          "type": "string"
+        },
+        "magnitude": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Magnitude"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "subject_refs": {
+          "items": {
+            "$ref": "#/$defs/SubjectRef"
+          },
+          "minItems": 1,
+          "title": "Subject Refs",
+          "type": "array"
+        },
+        "summary": {
+          "maxLength": 280,
+          "title": "Summary",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "announced_closure",
+            "closed",
+            "idled",
+            "restarted",
+            "announced_expansion",
+            "commissioned",
+            "construction_started",
+            "acquisition",
+            "divestment",
+            "jv_formed",
+            "insolvency",
+            "force_majeure",
+            "incident",
+            "trade_measure",
+            "regulatory",
+            "project_cancelled"
+          ],
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "date",
+        "type",
+        "subject_refs",
+        "summary",
+        "evidence_refs"
+      ],
+      "title": "OutEvent",
+      "type": "object"
+    },
+    "OutEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "cites_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cites Url"
+        },
+        "kind": {
+          "const": "evidence",
+          "title": "Kind",
+          "type": "string"
+        },
+        "language": {
+          "description": "ISO 639-1",
+          "pattern": "^[a-z]{2}$",
+          "title": "Language",
+          "type": "string"
+        },
+        "locator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Locator"
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Published At"
+        },
+        "publisher": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Publisher"
+        },
+        "quote": {
+          "maxLength": 400,
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "quote_en": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote En"
+        },
+        "retrieved_at": {
+          "format": "date-time",
+          "title": "Retrieved At",
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "regulator",
+            "permit",
+            "company_primary",
+            "exchange_filing",
+            "trade_measure",
+            "trade_press",
+            "aggregator",
+            "association",
+            "operator_claimed",
+            "other"
+          ],
+          "title": "Source Type",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "url",
+        "retrieved_at",
+        "source_type",
+        "language",
+        "quote"
+      ],
+      "title": "OutEvidence",
+      "type": "object"
+    },
+    "OutNotFound": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "not_found",
+          "title": "Kind",
+          "type": "string"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "searched": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Searched",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "query"
+      ],
+      "title": "OutNotFound",
+      "type": "object"
+    },
+    "SubjectRef": {
+      "additionalProperties": false,
+      "description": "What a claim is about: a known ID, or a candidate on another line (+ molecule for a unit).",
+      "properties": {
+        "candidate_company": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Company"
+        },
+        "candidate_site": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Site"
+        },
+        "company": {
+          "anyOf": [
+            {
+              "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Company"
+        },
+        "molecule": {
+          "anyOf": [
+            {
+              "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Molecule"
+        },
+        "site": {
+          "anyOf": [
+            {
+              "pattern": "^site:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Site"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "pattern": "^unit:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}:[a-z0-9]+(?:-[a-z0-9]+)*(:\\d{2})?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        }
+      },
+      "title": "SubjectRef",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "candidate_company": "#/$defs/OutCandidateCompany",
+      "candidate_site": "#/$defs/OutCandidateSite",
+      "claim": "#/$defs/OutClaim",
+      "event": "#/$defs/OutEvent",
+      "evidence": "#/$defs/OutEvidence",
+      "not_found": "#/$defs/OutNotFound"
+    },
+    "propertyName": "kind"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/OutEvidence"
+    },
+    {
+      "$ref": "#/$defs/OutCandidateCompany"
+    },
+    {
+      "$ref": "#/$defs/OutCandidateSite"
+    },
+    {
+      "$ref": "#/$defs/OutClaim"
+    },
+    {
+      "$ref": "#/$defs/OutEvent"
+    },
+    {
+      "$ref": "#/$defs/OutNotFound"
+    }
+  ]
+}

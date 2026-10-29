@@ -1,0 +1,35 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "date": {
+      "format": "date",
+      "title": "Date",
+      "type": "string"
+    },
+    "decided_by": {
+      "title": "Decided By",
+      "type": "string"
+    },
+    "from_id": {
+      "title": "From Id",
+      "type": "string"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "to_id": {
+      "title": "To Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "from_id",
+    "to_id",
+    "reason",
+    "decided_by",
+    "date"
+  ],
+  "title": "Merge",
+  "type": "object"
+}

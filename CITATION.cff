@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use Portolan data or code, please cite it as below."
+title: "Portolan: the open map of where chemicals are made"
+type: dataset
+authors:
+  - family-names: Arbolino
+    given-names: Lorenzo
+repository-code: "https://github.com/LorenzoArbolino/portolan"
+url: "https://lorenzoarbolino.github.io/portolan/"
+license: ODbL-1.0
+version: 0.1.0
+date-released: 2026-10-29
+keywords:
+  - chemical industry
+  - supply chain
+  - production capacity
+  - isoprenoids
+  - open data

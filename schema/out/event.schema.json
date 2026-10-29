@@ -1,0 +1,198 @@
+{
+  "$defs": {
+    "Magnitude": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Magnitude",
+      "type": "object"
+    },
+    "SubjectRef": {
+      "additionalProperties": false,
+      "description": "What a claim is about: a known ID, or a candidate on another line (+ molecule for a unit).",
+      "properties": {
+        "candidate_company": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Company"
+        },
+        "candidate_site": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Site"
+        },
+        "company": {
+          "anyOf": [
+            {
+              "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Company"
+        },
+        "molecule": {
+          "anyOf": [
+            {
+              "pattern": "^mol:(\\d{2,7}-\\d{2}-\\d|x-[a-z0-9]+(?:-[a-z0-9]+)*)$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Molecule"
+        },
+        "site": {
+          "anyOf": [
+            {
+              "pattern": "^site:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Site"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "pattern": "^unit:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}:[a-z0-9]+(?:-[a-z0-9]+)*(:\\d{2})?$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        }
+      },
+      "title": "SubjectRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "date": {
+      "format": "date",
+      "title": "Date",
+      "type": "string"
+    },
+    "date_precision": {
+      "default": "day",
+      "enum": [
+        "day",
+        "month",
+        "quarter",
+        "year"
+      ],
+      "title": "Date Precision",
+      "type": "string"
+    },
+    "evidence_refs": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Evidence Refs",
+      "type": "array"
+    },
+    "kind": {
+      "const": "event",
+      "title": "Kind",
+      "type": "string"
+    },
+    "magnitude": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Magnitude"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "subject_refs": {
+      "items": {
+        "$ref": "#/$defs/SubjectRef"
+      },
+      "minItems": 1,
+      "title": "Subject Refs",
+      "type": "array"
+    },
+    "summary": {
+      "maxLength": 280,
+      "title": "Summary",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "announced_closure",
+        "closed",
+        "idled",
+        "restarted",
+        "announced_expansion",
+        "commissioned",
+        "construction_started",
+        "acquisition",
+        "divestment",
+        "jv_formed",
+        "insolvency",
+        "force_majeure",
+        "incident",
+        "trade_measure",
+        "regulatory",
+        "project_cancelled"
+      ],
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "kind",
+    "date",
+    "type",
+    "subject_refs",
+    "summary",
+    "evidence_refs"
+  ],
+  "title": "OutEvent",
+  "type": "object"
+}

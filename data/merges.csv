@@ -1,0 +1,41 @@
+from_id,to_id,reason,decided_by,date
+site:de-ludwigshafen-am-rhein-01,site:de-ludwigshafen-01,"Same BASF Ludwigshafen Verbund site: same operator (BASF), same town; the agent wrote the locality as 'Ludwigshafen am Rhein'",claude,2026-10-27
+co:symrise-ag-us-terpene-operations-jacksonville-fl-colonels-island-ga,co:symrise-ag,The agent put site details into the company name; the company is Symrise AG,claude,2026-10-27
+site:in-mandi-dhanaura-amroha-01,site:in-dhanaura-amroha-01,same Norex Flavours plant: Mandi Dhanaura is the town in Amroha district,claude,2026-10-27
+site:us-plymouth-02,site:us-plymouth-01,same Domtar Plymouth (NC) kraft mill: agent site vs EPA CDR record,claude,2026-10-28
+co:petroliam-nasional-berhad,co:petroliam-nasional-berhad-petronas,same company (legal-form variant),claude,2026-10-28
+co:fairfax-financial-holdings-limited,co:fairfax-financial-holdings,same company (legal-form variant),claude,2026-10-28
+co:packaging-corp-of-america,co:packaging-corporation-of-america,same company (abbreviated name),claude,2026-10-28
+co:domtar-corp,co:domtar-corporation,same company (abbreviated name),claude,2026-10-28
+co:international-paper,co:international-paper-co,same company (legal-form variant),claude,2026-10-28
+site:in-mahad-02,site:in-mahad-01,same Privi plant at MIDC Mahad,claude,2026-10-28
+site:de-holzminden-02,site:de-holzminden-01,same Symrise Holzminden site,claude,2026-10-28
+site:de-basf-01,site:de-ludwigshafen-01,BASF's German citral production is Ludwigshafen; company-level figures belong there,claude,2026-10-28
+site:de-symrise-ag-us-terpene-operatio-01,site:us-jacksonville-02,same Symrise terpene plant in Jacksonville FL (lead placeholder vs EPA CDR record),claude,2026-10-28
+co:international-paper-flint-river-mill,co:international-paper-co,The agent put the mill name (Flint River) into the company name; the company is International Paper,claude,2026-10-28
+co:graphic-packaging-international,co:graphic-packaging-holding-co,Graphic Packaging International LLC is the operating subsidiary of Graphic Packaging Holding Co; one company on the map,claude,2026-10-28
+co:arora-aromatics,co:arora-aromatics-private-limited,same company (legal-form variant),claude,2026-10-28
+co:x351d7f6c,co:shanghai-petrochemical-co-ltd,same company: 中国石化上海石油化工股份(有限公司) is Shanghai Petrochemical's Chinese name (alias on the target),claude,2026-10-28
+co:privi-organics-limited,co:privi-speciality-chemicals-limited,Privi Organics' business was amalgamated into Fairchem Speciality (NCLT order 30 Jun 2020) and renamed Privi Speciality Chemicals (Oct 2020),claude,2026-10-28
+co:dsm-nutritional-products,co:dsm-firmenich-firmenich,DSM's nutrition business is part of dsm-firmenich since the 2023 merger; one company on the map,claude,2026-10-28
+site:us-colonels-island-01,site:us-brunswick-01,"same Symrise/AmeriTerpenes plant: Colonels Island is in Brunswick, GA, and the EPA record for Symrise Inc. in Brunswick is its only Georgia site (Symrise names Jacksonville and Colonels Island as its two US terpene sites)",claude,2026-10-28
+ev:2017-10-31:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-incident,ev:2017-10-31:de-ludwigshafen-01-citral-incident,same event: the 2017 Ludwigshafen citral plant fire,claude,2026-10-28
+ev:2024-07-29:de-ludwigshafen-am-rhein-01-beta-ionone-incident,ev:2024-07-29:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-incident,same event: the 29 Jul 2024 Ludwigshafen fire,claude,2026-10-28
+ev:2024-07-29:de-ludwigshafen-01-beta-ionone-force-majeure,ev:2024-07-29:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-incident,same event: the 29 Jul 2024 Ludwigshafen fire and its force majeure,claude,2026-10-28
+ev:2024-07-29:basf-incident,ev:2024-07-29:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-incident,same event: the 29 Jul 2024 Ludwigshafen fire,claude,2026-10-28
+ev:2024-09-01:cn-yantai-01-citral-commissioned,ev:2024-08-29:cn-yantai-01-citral-commissioned,same event: Wanhua's Yantai citral start-up (launch 29 Aug; EIA says Sept),claude,2026-10-28
+ev:2025-01-01:basf-announced-expansion,ev:2025-01-01:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-announced-expansion,same event: BASF's 10% vitamin E acetate expansion,claude,2026-10-28
+ev:2026-04-01:de-ludwigshafen-01-linalool-commissioned,ev:2026-04-01:de-ludwigshafen-01-l-menthol-commissioned,same event: menthol and linalool start-up at Ludwigshafen (April 2026),claude,2026-10-28
+ev:2026-04-28:cn-zhanjiang-01-citral-commissioned,ev:2026-01-01:cn-zhanjiang-01-citral-commissioned,same event: Zhanjiang citral on-spec since Q1 2026 (the April item is the announcement),claude,2026-10-28
+ev:2026-09-03:symrise-ag-us-terpene-operations-jacksonville-fl-colonels-island-ga-acquisition,ev:2026-09-01:symrise-ag-us-terpene-operations-jacksonville-fl-colonels-island-ga-acquisition,same event: Mutares buys AmeriTerpenes from Symrise (closed 1 Sep 2026),claude,2026-10-28
+ev:2026-09-01:us-jacksonville-02-linalool-acquisition,ev:2026-09-01:symrise-ag-us-terpene-operations-jacksonville-fl-colonels-island-ga-acquisition,same event: Mutares buys AmeriTerpenes from Symrise,claude,2026-10-28
+site:in-ponda-01,site:in-usgaon-01,"same Merck (now P&G Health) plant at Usgaon, Ponda taluka, Goa: one record carries the address, the other the village",claude,2026-10-29
+ev:2011-08-18:in-ponda-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-announced-expansion,ev:2011-08-18:in-usgaon-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-announced-expansion,same event: Merck's 2011 proposal to double vitamin E acetate at Usgaon (sites merged),claude,2026-10-29
+ev:2024-08-07:de-ludwigshafen-01-isophytol-force-majeure,ev:2024-07-29:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-incident,same event: force majeure that followed the 29 Jul 2024 Ludwigshafen fire,claude,2026-10-29
+ev:2025-01-28:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-announced-expansion,ev:2025-01-01:de-ludwigshafen-01-vitamin-e-acetate-dl-alpha-tocopheryl-acetate-announced-expansion,same event: BASF's vitamin E acetate expansion (the January item is year-dated),claude,2026-10-29
+site:cn-x2a615e57-01,site:cn-xinchang-county-shaoxing-01,"same Zhejiang Medicine Xinchang Pharmaceutical Factory (新昌制药厂): a Haiku site line, not kept as a record; its event attaches here",claude,2026-10-29
+site:cn-haihua-technology-huilong-grou-01,site:cn-bengbu-01,"Haihua Technology's menthol plant: the placeholder (location not public) is its Bengbu site (Huilong 2025 annual report, subsidiaries table)",claude,2026-10-29
+site:cn-anhui-huilong-agricultural-mea-01,site:cn-bengbu-01,"same menthol plant: Huilong reports its subsidiary Haihua's 3,000 → 5,000 t/a L-menthol; one plant, not two",claude,2026-10-29
+site:cn-x44a3ddc1-01,site:cn-xiamen-haicang-district-01,"same Kingdomway vitamin plant in Haicang, Xiamen (金达威维生素): the filing gives the district in Chinese",claude,2026-10-29
+site:cn-x63560019-01,site:cn-weifang-01,"same NHU Weifang base (山东潍坊基地): the filing gives the town in Chinese",claude,2026-10-29
+co:xaf0dffb4,co:xiamen-kingdomway-group-co-ltd,"金达威维生素 is Kingdomway's vitamin subsidiary in Xiamen; one company on the map",claude,2026-10-29

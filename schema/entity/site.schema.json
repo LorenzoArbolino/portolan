@@ -1,0 +1,140 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "address": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Address"
+    },
+    "admin1": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Admin1"
+    },
+    "claimed_by_operator": {
+      "default": false,
+      "title": "Claimed By Operator",
+      "type": "boolean"
+    },
+    "claimed_by_operator_at": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Claimed By Operator At"
+    },
+    "country": {
+      "pattern": "^[A-Z]{2}$",
+      "title": "Country",
+      "type": "string"
+    },
+    "external_ids": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "title": "External Ids",
+      "type": "object"
+    },
+    "geo_precision": {
+      "enum": [
+        "exact",
+        "park",
+        "locality",
+        "country"
+      ],
+      "title": "Geo Precision",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^site:[a-z]{2}-[a-z0-9]+(?:-[a-z0-9]+)*-\\d{2}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "lat": {
+      "anyOf": [
+        {
+          "maximum": 90,
+          "minimum": -90,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lat"
+    },
+    "locality": {
+      "title": "Locality",
+      "type": "string"
+    },
+    "lon": {
+      "anyOf": [
+        {
+          "maximum": 180,
+          "minimum": -180,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lon"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "park_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Park Name"
+    },
+    "registry_ids": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "title": "Registry Ids",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "country",
+    "locality",
+    "geo_precision"
+  ],
+  "title": "Site",
+  "type": "object"
+}

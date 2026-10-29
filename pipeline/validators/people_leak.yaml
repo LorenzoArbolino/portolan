@@ -1,0 +1,27 @@
+# people_leak: cues for the person-name heuristic. Precision over recall: a cue must sit next to a
+# capitalised name. Extend these lists when a leak slips through; add false positives to `not_names`.
+
+honorifics: [Mr, Mrs, Ms, Miss, Dr, Prof, Herr, Frau, Mme, Mlle, Monsieur, Madame, Sig, Sig.ra, Dott, Ing,
+             Sr, Sra, Shri, Smt, Sri]
+cjk_after_name: [先生, 女士, 博士, さん, 様, 氏]      # 廖增太先生
+cjk_before_name: [董事长, 总经理, 总裁, 社長, 经理, 主任]  # 董事长廖增太
+roles: [CEO, CFO, COO, CTO, chairman, chairwoman, chair, president, "vice president", "managing director",
+        director, "plant manager", "site manager", "general manager", head, spokesperson, spokesman,
+        spokeswoman, founder, owner, Geschäftsführer, Vorstandsvorsitzender, Werkleiter, directeur,
+        directrice, "amministratore delegato", "director general"]
+speech_verbs: [said, says, explained, added, noted, commented, according to, sagte, erklärte, a déclaré,
+               ha dichiarato]
+# Common given names (multilingual, short on purpose). A match is "<Given> <Capitalised>".
+given_names: [James, John, Robert, Michael, William, David, Richard, Joseph, Thomas, Charles, Mary, Patricia,
+              Jennifer, Linda, Elizabeth, Barbara, Susan, Jessica, Sarah, Karen, Peter, Paul, Mark, Daniel,
+              Anna, Maria, Laura, Julia, Hans, Klaus, Jürgen, Wolfgang, Stefan, Andreas, Thomas, Markus,
+              Christian, Martin, Michael, Sabine, Petra, Ursula, Monika, Jean, Pierre, Philippe, Michel,
+              Alain, Nicolas, François, Marie, Sophie, Isabelle, Nathalie, Giuseppe, Giovanni, Marco, Luca,
+              Francesco, Alessandro, Andrea, Paolo, Giulia, Francesca, Chiara, Carlos, José, Juan, Javier,
+              Miguel, Carmen, Lucía, Rahul, Amit, Rajesh, Sanjay, Suresh, Ramesh, Vijay, Anil, Sunil, Priya,
+              Anjali, Neha, Pooja, Wei, Li, Zhang, Wang, Liu, Chen, Yang, Hiroshi, Takashi, Kenji, Yuki]
+# Capitalised phrases that look like names but are not people.
+not_names: [Wanhua Chemical, Zhejiang NHU, Speciality Chemicals, Industrial Estate, Mark Andy]
+# Address words: a name right after one of these is a street name, not a person.
+street_words: [Av, Avenida, Avenue, Rua, Rue, Via, Viale, Calle, Street, St, Road, Rd, Strasse, Straße, Str, Marg,
+               Path, Lane, Boulevard, Blvd, Industrial, Estrada, Rodovia, Allee, Weg, Platz, Nagar]

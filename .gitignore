@@ -1,0 +1,19 @@
+# Portolan: never commit snapshots, caches, people data or build output
+cache/
+build/
+snapshots/
+private/
+runs/**/log.txt
+*.pdf
+.venv/
+__pycache__/
+node_modules/
+.DS_Store
+.pytest_cache/
+.ruff_cache/
+# run workspaces: only out*.jsonl, manifest.json and summary.md are committed
+runs/**/prompt.md
+runs/**/inputs.json
+runs/**/opencode.json
+eval/runs/
+runs/**/document.txt

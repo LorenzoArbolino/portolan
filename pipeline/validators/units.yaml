@@ -1,0 +1,80 @@
+# Capacity units → tonnes per year (t/a).
+# Aliases are matched after normalisation (NFKC, lowercase, no spaces, "per" → "/", "tonnes"/"tons" → "t",
+# "year"/"annum"/"yr"/"y" → "a"; see units.py). `case_sensitive` aliases are tried on the raw string first.
+# Add aliases here, not in code.
+#
+# factor:     multiply the raw value by this to get t/a
+# assumption: the factor assumes operating time → capacity_basis = estimated, grade down by one
+# ambiguous:  the unit has more than one common meaning → never converted, sent to manual review
+
+units:
+  t/a:
+    factor: 1
+    aliases: [t/a, tpa, tpy, metrict/a, t/jahr, jato,
+              jahrestonnen, tonnen/jahr, t/an, tonnes/an, t/anno, tonnellate/anno, t/año, toneladas/año,
+              吨/年, 噸/年, トン/年, t/年, トン/a, 吨/a]
+  kt/a:
+    factor: 1000
+    aliases: [kt/a, ktpa, kta, kty, ktpy, thousandt/a, "'000t/a", 000t/a, 千吨/年, 千トン/年,
+              kt/jahr, kt/an, kt/anno]
+  10kt/a:
+    factor: 10000
+    aliases: [万吨/年, 萬噸/年, 万t/年, 万トン/年]
+  Mt/a:
+    factor: 1000000
+    aliases: [milliont/a, mmtpa, mmt/a, mlnt/a, mnt/a, mio.t/a, miot/a, 百万吨/年]
+    case_sensitive: [Mt/a, Mt/y, Mtpa, Mt/yr]   # capital M, lowercase t = million tonnes
+  t/month:
+    factor: 12
+    aliases: [t/month, t/m, tpm, mtpm, mt/month, t/mo, 吨/月, t/monat, t/mois, t/mese]
+  kg/a:
+    factor: 0.001
+    aliases: [kg/a, kgpa]
+  kg/month:
+    factor: 0.012
+    aliases: [kg/month, kg/m]
+  lb/a:
+    factor: 0.00045359237
+    aliases: [lb/a, lbs/a, pounds/a]
+  Mlb/a:
+    factor: 453.59237
+    aliases: [millionlb/a, millionlbs/a, mmlb/a, mmlbs/a, millionpounds/a]
+  t/d:
+    factor: 330
+    assumption: "330 operating days per year"
+    aliases: [t/d, tpd, mt/d, t/day, mt/day, 吨/天, 吨/日, t/tag]
+  kg/d:
+    factor: 0.33
+    assumption: "330 operating days per year"
+    aliases: [kg/d, kg/day, 公斤/天]
+  t/h:
+    factor: 8000
+    assumption: "8000 operating hours per year"
+    aliases: [t/h, tph, t/hr, mt/h, 吨/时, 吨/小时]
+  kg/h:
+    factor: 8
+    assumption: "8000 operating hours per year"
+    aliases: [kg/h, kg/hr]
+  # Ambiguous: "MTPA" is million tonnes per annum in energy and petrochemicals, but metric tonnes per annum
+  # in many Indian documents. "mt" alone is ambiguous too. A bare 万吨 (no period) is stock, not a rate.
+  ambiguous:
+    ambiguous: true
+    aliases: [mtpa, mt/a, mta, mt, t, 万吨, 吨]
+
+# Product bases (vitamins are sold and quoted as formulations, not the pure ester). When a capacity's quote or
+# unit names one of these bases for one of these molecules, the collector converts to acetate content and
+# flags the claim. Chemistry, not estimation: 50% powder is 50% vitamin E acetate by definition; vitamin A
+# acetate carries 2,907,000 IU/g (1 IU = 0.344 µg retinyl acetate), so a 500,000 IU/g product is 17.2% acetate.
+product_basis:
+  - molecules: [mol:7695-91-2]
+    patterns: ["50%粉", "50% powder", "50%powder", "50%粉剂", "50% feed grade", "50%饲料级"]
+    factor: 0.5
+    label: "50% powder → vitamin E acetate content (×0.5)"
+  - molecules: [mol:127-47-9]
+    patterns: ["50万iu", "500,000iu", "500000iu", "500kiu", "500 000 iu"]
+    factor: 0.172
+    label: "500,000 IU/g product → vitamin A acetate content (×0.172)"
+  - molecules: [mol:127-47-9]
+    patterns: ["100万iu", "1,000,000iu", "1000000iu", "1000kiu", "a 1000"]
+    factor: 0.344
+    label: "1,000,000 IU/g product → vitamin A acetate content (×0.344)"

@@ -1,0 +1,267 @@
+{
+  "$defs": {
+    "Estimate": {
+      "additionalProperties": false,
+      "description": "How a grade-D value was estimated (methodology, rule 1): method, sourced inputs, a range.",
+      "properties": {
+        "confidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "high": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "High"
+        },
+        "inputs": {
+          "items": {
+            "pattern": "^clm:[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Inputs",
+          "type": "array"
+        },
+        "low": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Low"
+        },
+        "method": {
+          "title": "Method",
+          "type": "string"
+        }
+      },
+      "required": [
+        "method",
+        "inputs",
+        "confidence"
+      ],
+      "title": "Estimate",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "as_of": {
+      "format": "date",
+      "title": "As Of",
+      "type": "string"
+    },
+    "capacity_basis": {
+      "anyOf": [
+        {
+          "enum": [
+            "nameplate",
+            "permitted",
+            "design",
+            "estimated",
+            "production"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Capacity Basis"
+    },
+    "confidence": {
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "estimate": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Estimate"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "evidence_ids": {
+      "items": {
+        "pattern": "^src:[0-9a-f]{12}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "extracted_by": {
+      "title": "Extracted By",
+      "type": "string"
+    },
+    "field": {
+      "enum": [
+        "capacity",
+        "status",
+        "operator",
+        "parent",
+        "share_pct",
+        "start_year",
+        "end_year",
+        "route",
+        "lat_lon",
+        "captive_share",
+        "exists",
+        "world_capacity",
+        "world_demand"
+      ],
+      "title": "Field",
+      "type": "string"
+    },
+    "flags": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Flags",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^clm:[0-9a-f]{12}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "review_note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Review Note"
+    },
+    "review_state": {
+      "default": "proposed",
+      "enum": [
+        "proposed",
+        "validated",
+        "accepted",
+        "rejected",
+        "superseded"
+      ],
+      "title": "Review State",
+      "type": "string"
+    },
+    "subject_id": {
+      "pattern": "^(mol|rte|site|unit|co|ev|tm):\\S+$",
+      "title": "Subject Id",
+      "type": "string"
+    },
+    "unit_raw": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unit Raw"
+    },
+    "valid_from": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid From"
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid To"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "title": "Value"
+    },
+    "value_norm": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Value Norm"
+    }
+  },
+  "required": [
+    "id",
+    "subject_id",
+    "field",
+    "value",
+    "as_of",
+    "evidence_ids",
+    "extracted_by",
+    "confidence"
+  ],
+  "title": "Claim",
+  "type": "object"
+}

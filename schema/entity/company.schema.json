@@ -1,0 +1,90 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "aliases": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
+    },
+    "hq_country": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Z]{2}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Hq Country"
+    },
+    "id": {
+      "pattern": "^co:[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "listed_ticker": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Listed Ticker"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "registry_ids": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "title": "Registry Ids",
+      "type": "object"
+    },
+    "type": {
+      "default": [],
+      "items": {
+        "enum": [
+          "producer",
+          "trader",
+          "distributor",
+          "converter",
+          "brand_owner",
+          "investor",
+          "licensor"
+        ],
+        "type": "string"
+      },
+      "title": "Type",
+      "type": "array"
+    },
+    "website": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Website"
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ],
+  "title": "Company",
+  "type": "object"
+}

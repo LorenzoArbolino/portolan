@@ -1,0 +1,50 @@
+# Which agent:model runs each job type. The ONLY place model names live.
+# Candidates are tried in order; a rate-limited or unavailable candidate falls through to the next.
+# Swapping a model = editing one line here, then re-running the gold set (eval/run_gold.py).
+#
+# A candidate is "<agent>:<model>". <agent> is a key of `agents`; <model> is passed to that CLI verbatim.
+
+agents:
+  opencode: pipeline.agents.opencode:OpenCodeAdapter       # free models via OpenCode Zen
+  claude_code: pipeline.agents.claude_code:ClaudeCodeAdapter
+  stub: pipeline.agents.base:StubAdapter                    # offline dry runs and tests
+
+jobs:
+  # Gold scores (eval/README.md): claude_code:sonnet precision 1.0, honesty 1.0; claude_code:haiku precision
+  # 0.86, honesty 1.0. Web research runs on the gold-set model; routine lookups on the cheaper one. Every quote
+  # is checked by code either way.
+  enumerate_producers:
+    - claude_code:sonnet
+  market_overview:
+    - claude_code:haiku
+    - claude_code:sonnet
+  unit_claims:
+    - claude_code:sonnet
+  must_find:
+    - claude_code:sonnet
+  site_profile:
+    - claude_code:haiku
+  ownership_chain:
+    - claude_code:haiku
+  geocode:
+    - claude_code:haiku
+  # Reading a pre-fetched document: the cheaper model. It is not in gold_passed, so every claim it makes goes
+  # to the review queue before it shows.
+  document_extract:
+    - claude_code:haiku
+    - claude_code:sonnet
+  doc_claims:
+    - claude_code:haiku
+    - claude_code:sonnet
+
+# Models that passed the gold set (eval/README.md). The collector auto-accepts only their claims; anything else
+# goes to the review queue, however good its grade. `claude_code:session` is an interactive reviewing session
+# (claims written by hand from existing evidence).
+gold_passed:
+  - claude_code:sonnet
+  - claude_code:session
+
+limits:
+  timeout_s: 1200       # wall clock per job; on timeout the job is `partial` and keeps its output
+  max_fetches: 60       # stated in the prompt; CLIs can't enforce it
+  rate_limit_backoff_s: [30, 120, 600]

@@ -1,0 +1,3 @@
+event_id,kind,seller,buyer,target,sites,decided_by,date,note
+ev:2026-09-01:symrise-ag-us-terpene-operations-jacksonville-fl-colonels-island-ga-acquisition,operator,co:symrise-ag,co:ameriterpenes-llc,,"[""site:us-brunswick-01"", ""site:us-jacksonville-02""]",claude,2026-10-28,"Mutares acquired AmeriTerpenes LLC (Symrise's US terpene business: Jacksonville FL and Colonels Island GA). AmeriTerpenes operates the sites; Mutares is the parent"
+ev:2023-01-01:br-votuporanga-01-linalool-acquisition,parent,,co:santa-clara-agrociencia,co:linax-industria-e-comercio-de-oleos-essenciais-ltda,"[""site:br-votuporanga-01""]",claude,2026-10-28,"Grupo Santa Clara acquired Linax in 2023 (Linax joins Santa Clara Agrociência); Linax keeps operating the plant"
